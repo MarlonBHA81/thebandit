@@ -750,11 +750,11 @@
       padding: 4rem 4rem;
     }
     .logos-grid {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
       align-items: center;
-      justify-content: center;
-      gap: 2.5rem 3.5rem;
+      justify-items: center;
+      gap: 2.5rem 3rem;
       margin-top: 2rem;
     }
     .logo-item {
@@ -763,9 +763,9 @@
       justify-content: center;
     }
     .brand-logo {
-      height: 34px;
+      height: 41px;
       width: auto;
-      max-width: 130px;
+      max-width: 156px;
       object-fit: contain;
       opacity: 0.55;
       transition: opacity 0.35s;
@@ -1035,7 +1035,7 @@
       .footer-links { justify-content: center; }
       .video-performer { left: -5%; height: 105%; }
       .video-play-btn { left: 65%; }
-      .logos-grid { gap: 2rem 2.5rem; }
+      .logos-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem 2rem; }
     }
     @media (max-width: 480px) {
       .venues-grid { grid-template-columns: 1fr; }
@@ -1449,8 +1449,7 @@
       <h2 class="section-title reveal reveal-delay-1">Clients &amp; <em>Brands</em></h2>
       <div class="logos-grid reveal reveal-delay-2">
         <div class="logo-item"><img src="white_logos/absa_white.webp" alt="ABSA" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/sab_white.webp" alt="SAB" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/toyota_white.webp" alt="Toyota" class="brand-logo" /></div>
+<div class="logo-item"><img src="white_logos/toyota_white.webp" alt="Toyota" class="brand-logo" /></div>
         <div class="logo-item"><img src="white_logos/mtn_white.webp" alt="MTN" class="brand-logo" /></div>
         <div class="logo-item"><img src="white_logos/anglo_american_white.webp" alt="Anglo American" class="brand-logo" /></div>
         <div class="logo-item"><img src="white_logos/discovery_white.webp" alt="Discovery" class="brand-logo" /></div>
