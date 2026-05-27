@@ -125,7 +125,7 @@
       width: 100%;
       max-width: 1400px;
       margin: 0 auto;
-      padding: 8rem 4rem 4rem;
+      padding: 6rem 4rem 3rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
@@ -299,7 +299,7 @@
     }
 
     /* ─── SECTION COMMONS ─────────────────────────────────── */
-    section { padding: 7rem 4rem; }
+    section { padding: 4.5rem 4rem; }
     .container { max-width: 1300px; margin: 0 auto; }
     .section-label {
       display: inline-flex;
@@ -366,7 +366,7 @@
     /* ─── QUOTE ───────────────────────────────────────────── */
     #quote {
       background: var(--dark2);
-      padding: 6rem 4rem;
+      padding: 4rem 4rem;
       text-align: center;
     }
     .big-quote {
@@ -391,18 +391,26 @@
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6rem;
+      gap: 5rem;
       align-items: center;
     }
-    .about-imgs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 12px;
+    .about-img-single {
+      position: relative;
     }
-    .about-img {
+    .about-img-single::before {
+      content: '';
+      position: absolute;
+      top: -10px; left: -10px;
+      right: 10px; bottom: 10px;
+      border: 1px solid rgba(5,160,235,0.3);
+      border-radius: 2px;
+      z-index: 0;
+    }
+    .about-img-main {
+      position: relative;
+      z-index: 1;
       width: 100%;
-      aspect-ratio: 2/3;
+      aspect-ratio: 3/4;
       object-fit: cover;
       object-position: top center;
       border-radius: 2px;
@@ -411,11 +419,7 @@
       background: var(--dark3);
       display: block;
     }
-    .about-img:hover { filter: grayscale(0%) contrast(1.1); }
-    .about-img.tall {
-      grid-row: span 2;
-      aspect-ratio: 3/5;
-    }
+    .about-img-main:hover { filter: grayscale(0%) contrast(1.1); }
     .about-text p {
       color: #c0c0c0;
       line-height: 1.9;
@@ -452,7 +456,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
-      margin-top: 3.5rem;
+      margin-top: 2rem;
     }
     .service-card {
       background: var(--dark2);
@@ -510,12 +514,12 @@
     /* ─── VIDEO ───────────────────────────────────────────── */
     #video {
       background: var(--dark);
-      padding: 7rem 4rem;
+      padding: 4.5rem 4rem;
       overflow: hidden;
     }
     .video-header {
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 2.5rem;
     }
     .video-header .section-label {
       justify-content: center;
@@ -654,7 +658,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 3rem;
-      margin-top: 3.5rem;
+      margin-top: 2rem;
       max-width: 1100px;
       margin-left: auto;
       margin-right: auto;
@@ -672,7 +676,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
-      margin-top: 3.5rem;
+      margin-top: 2rem;
     }
     .testimonial-card {
       background: var(--dark2);
@@ -716,7 +720,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 2px;
-      margin-top: 3.5rem;
+      margin-top: 2rem;
     }
     .venue-group {
       background: var(--dark2);
@@ -745,15 +749,15 @@
     /* ─── CLIENTS / LOGOS ─────────────────────────────────── */
     #clients {
       background: var(--black);
-      padding: 6rem 4rem;
+      padding: 4rem 4rem;
     }
     .logos-grid {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: 3rem 4rem;
-      margin-top: 3.5rem;
+      gap: 2.5rem 3.5rem;
+      margin-top: 2rem;
     }
     .logo-item {
       display: flex;
@@ -786,7 +790,7 @@
     #encounters {
       background: var(--dark2);
       text-align: center;
-      padding: 6rem 4rem;
+      padding: 4rem 4rem;
     }
     .encounters-desc {
       color: #c0c0c0;
@@ -828,7 +832,7 @@
       border: 1px solid rgba(5,160,235,0.12);
       border-radius: 2px;
       overflow: hidden;
-      margin-top: 4rem;
+      margin-top: 2.5rem;
     }
     .contact-image-col {
       position: relative;
@@ -996,15 +1000,15 @@
       nav.scrolled { padding: 0.8rem 2rem; }
       .nav-links { gap: 1.5rem; }
       .hero-inner { padding: 6rem 2rem 3rem; gap: 2rem; }
-      section { padding: 5rem 2rem; }
-      #video { padding: 5rem 2rem; }
+      section { padding: 3rem 2rem; }
+      #video { padding: 3rem 2rem; }
       .about-grid { gap: 3rem; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .testimonials-grid { grid-template-columns: 1fr 1fr; }
       .venues-grid { grid-template-columns: repeat(2, 1fr); }
-      #quote, #encounters, #contact { padding: 5rem 2rem; }
-      footer { padding: 2.5rem 2rem; }
-      #clients { padding: 4rem 2rem; }
+      #quote, #encounters, #contact { padding: 3rem 2rem; }
+      footer { padding: 2rem 2rem; }
+      #clients { padding: 3rem 2rem; }
       .video-footer { flex-direction: column; text-align: center; gap: 2rem; }
       .video-footer p { max-width: 100%; }
       .video-play-btn { left: 58%; }
@@ -1020,8 +1024,7 @@
       .hero-badge { left: 50%; transform: translateX(-50%); bottom: -4rem; }
       .hero-actions { justify-content: center; }
       .about-grid { grid-template-columns: 1fr; }
-      .about-imgs { grid-template-columns: 1fr 1fr; }
-      .about-img.tall { aspect-ratio: 2/3; grid-row: span 1; }
+      .about-img-single { max-width: 380px; margin: 0 auto; }
       .stats-row { grid-template-columns: repeat(3, 1fr); }
       .services-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
@@ -1131,7 +1134,7 @@
       <div class="hero-img-wrap">
         <div class="hero-img-frame">
           <img
-            src="Comedy-46.jpg"
+            src="Comedy-40.jpg"
             alt="The Bandit, South African Magician"
             class="hero-img"
           />
@@ -1181,10 +1184,8 @@
   <section id="about">
     <div class="container">
       <div class="about-grid">
-        <div class="about-imgs reveal">
-          <img src="Comedy-40.jpg" alt="The Bandit performing card magic" class="about-img tall" />
-          <img src="Comedy-51.jpg" alt="The Bandit with playing cards" class="about-img" />
-          <img src="Comedy-55.jpg" alt="The Bandit performing" class="about-img" />
+        <div class="about-img-single reveal">
+          <img src="Comedy-55.jpg" alt="The Bandit performing" class="about-img-main" />
         </div>
         <div class="about-text">
           <div class="section-label reveal">The Story</div>
