@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Bandit | South Africa's Magic Outlaw</title>
   <meta name="description" content="The Bandit is South Africa's premier comedy magician and pickpocket entertainer. Book him for corporate events, weddings, stage shows and more." />
+  <link rel="icon" href="images/bandit-logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="images/bandit-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -55,6 +57,16 @@
       letter-spacing: 0.12em;
       color: var(--white);
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .nav-logo img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+      border-radius: 50%;
+      flex-shrink: 0;
     }
     .nav-logo span { color: var(--blue); }
     .nav-links {
@@ -828,10 +840,59 @@
     /* ─── BOOK / CONTACT ──────────────────────────────────── */
     #contact {
       background: var(--black);
-      text-align: center;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 0;
+      align-items: stretch;
+      background: var(--dark2);
+      border: 1px solid rgba(5,160,235,0.12);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: 4rem;
+    }
+    .contact-image-col {
+      position: relative;
+      min-height: 600px;
+      overflow: hidden;
+    }
+    .contact-image-col img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(15%) contrast(1.05);
+      display: block;
+      background: var(--dark3);
+    }
+    .contact-image-col::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 70%, rgba(17,17,17,0.7) 100%);
+      pointer-events: none;
+    }
+    .contact-form-col {
+      padding: 3.5rem;
+    }
+    .contact-form-col .section-label { justify-content: flex-start; }
+    .contact-form-col p {
+      color: #c0c0c0;
+      font-size: 0.97rem;
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+    .contact-form-col h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      margin-bottom: 1.5rem;
+      color: var(--white);
     }
     .contact-inner {
-      max-width: 700px;
+      max-width: 1300px;
       margin: 0 auto;
     }
     .contact-inner .section-label { justify-content: center; }
@@ -843,11 +904,13 @@
       height: 1px;
       background: var(--blue);
     }
-    .contact-inner p {
+    .contact-inner > p {
       color: #c0c0c0;
       font-size: 1rem;
       line-height: 1.85;
-      margin-bottom: 3rem;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
     }
     .contact-card {
       background: var(--dark2);
@@ -986,6 +1049,9 @@
       .testimonials-grid { grid-template-columns: 1fr; }
       .venues-grid { grid-template-columns: 1fr 1fr; }
       .contact-fields { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-image-col { min-height: 320px; }
+      .contact-form-col { padding: 2.5rem 1.5rem; }
       footer { flex-direction: column; text-align: center; }
       .footer-links { justify-content: center; }
       .video-performer { left: -5%; height: 105%; }
@@ -1036,7 +1102,10 @@
 
   <!-- NAV -->
   <nav id="navbar">
-    <a href="#hero" class="nav-logo">The <span>Bandit</span></a>
+    <a href="#hero" class="nav-logo">
+      <img src="images/bandit-logo.png" alt="Bandit Magic logo" />
+      The <span>Bandit</span>
+    </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
@@ -1530,37 +1599,50 @@
     <div class="container">
       <div class="contact-inner">
         <div class="section-label reveal">Get In Touch</div>
-        <h2 class="section-title reveal reveal-delay-1">Book The <em>Bandit</em></h2>
+        <h2 class="section-title reveal reveal-delay-1" style="text-align:center;">Book The <em>Bandit</em></h2>
         <div class="divider reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;"></div>
         <p class="reveal reveal-delay-2">
           Ready to make your event truly unforgettable? Whether it's an intimate dinner or a grand stage show, The Bandit delivers a professional performance, show after show after show.
         </p>
-        <div class="contact-card reveal reveal-delay-3">
-          <h3>Send A Booking Enquiry</h3>
-          <form onsubmit="handleSubmit(event)">
-            <div class="contact-fields">
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Email Address" required />
-              <input type="text" placeholder="Company / Organisation" />
-              <input type="text" placeholder="Event Date" />
-              <div class="contact-msg" style="grid-column: 1/-1;">
-                <select>
-                  <option value="" disabled selected>Type of Event</option>
-                  <option>Corporate Function</option>
-                  <option>Wedding</option>
-                  <option>Private Party</option>
-                  <option>Trade Show / Expo</option>
-                  <option>Comedy Club / Theatre</option>
-                  <option>Festival / Concert</option>
-                  <option>Other</option>
-                </select>
+
+        <div class="contact-grid reveal reveal-delay-3">
+
+          <!-- Image column -->
+          <div class="contact-image-col">
+            <img src="images/bandit-illusion.jpg" alt="The Bandit performing an illusion" />
+          </div>
+
+          <!-- Form column -->
+          <div class="contact-form-col">
+            <div class="section-label">Booking Enquiry</div>
+            <h3>Send A Message</h3>
+            <p>Fill in your details below and The Bandit's team will get back to you promptly to discuss your event.</p>
+            <form onsubmit="handleSubmit(event)">
+              <div class="contact-fields">
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Email Address" required />
+                <input type="text" placeholder="Company / Organisation" />
+                <input type="text" placeholder="Event Date" />
+                <div class="contact-msg" style="grid-column: 1/-1;">
+                  <select>
+                    <option value="" disabled selected>Type of Event</option>
+                    <option>Corporate Function</option>
+                    <option>Wedding</option>
+                    <option>Private Party</option>
+                    <option>Trade Show / Expo</option>
+                    <option>Comedy Club / Theatre</option>
+                    <option>Festival / Concert</option>
+                    <option>Other</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <div class="contact-msg">
-              <textarea placeholder="Tell us about your event: venue, expected guests, any special requirements..."></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Send Enquiry</button>
-          </form>
+              <div class="contact-msg">
+                <textarea placeholder="Tell us about your event: venue, expected guests, any special requirements..."></textarea>
+              </div>
+              <button type="submit" class="btn-submit">Send Enquiry</button>
+            </form>
+          </div>
+
         </div>
       </div>
     </div>
@@ -1568,7 +1650,10 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">The <span>Bandit</span></div>
+    <div class="footer-logo" style="display:flex;align-items:center;gap:0.6rem;">
+      <img src="images/bandit-logo.png" alt="Bandit Magic" style="width:32px;height:32px;object-fit:contain;border-radius:50%;" />
+      The <span>Bandit</span>
+    </div>
     <ul class="footer-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
