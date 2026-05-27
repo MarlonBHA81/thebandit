@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Bandit – South Africa's Magic Outlaw</title>
+  <title>The Bandit | South Africa's Magic Outlaw</title>
   <meta name="description" content="The Bandit is South Africa's premier comedy magician and pickpocket entertainer. Book him for corporate events, weddings, stage shows and more." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -238,6 +238,8 @@
       border-radius: 2px;
       display: block;
       filter: grayscale(20%) contrast(1.05);
+      background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+      min-height: 200px;
     }
     .hero-badge {
       position: absolute;
@@ -394,6 +396,8 @@
       border-radius: 2px;
       filter: grayscale(15%) contrast(1.05);
       transition: filter 0.4s;
+      background: var(--dark3);
+      display: block;
     }
     .about-img:hover { filter: grayscale(0%) contrast(1.1); }
     .about-img.tall {
@@ -493,34 +497,182 @@
 
     /* ─── VIDEO ───────────────────────────────────────────── */
     #video {
-      background: var(--dark2);
+      background: var(--dark);
       padding: 7rem 4rem;
-    }
-    .video-inner {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 5rem;
-      align-items: center;
-    }
-    .video-embed {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      border-radius: 2px;
       overflow: hidden;
-      border: 1px solid rgba(5,160,235,0.2);
     }
-    .video-embed iframe {
+    .video-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .video-header .section-label {
+      justify-content: center;
+    }
+    .video-header .section-label::before { display: none; }
+    .video-header .section-label::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--blue);
+    }
+    .video-header .divider {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* The cinematic stage */
+    .video-stage {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Clickable thumbnail layer */
+    .video-thumb {
+      position: relative;
+      cursor: pointer;
+      overflow: visible;
+    }
+    .video-thumb-inner {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: #090909;
+      border: 1px solid rgba(5,160,235,0.15);
+      overflow: hidden;
+    }
+    /* Subtle grid texture inside the stage */
+    .video-thumb-inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(5,160,235,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(5,160,235,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: 0;
+    }
+    /* Large watermark text behind everything */
+    .video-bg-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .video-bg-text span {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(4rem, 10vw, 9rem);
+      font-weight: 900;
+      color: rgba(255,255,255,0.03);
+      letter-spacing: 0.15em;
+      white-space: nowrap;
+      text-transform: uppercase;
+      user-select: none;
+    }
+    /* Right-side vignette so performer stands out */
+    .video-thumb-inner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
+      z-index: 2;
+    }
+
+    /* Performer image overlapping from left */
+    .video-performer {
+      position: absolute;
+      bottom: 0;
+      left: -2%;
+      height: 112%;
+      z-index: 4;
+      object-fit: contain;
+      pointer-events: none;
+      filter: drop-shadow(0 20px 50px rgba(5,160,235,0.12)) drop-shadow(0 0 1px rgba(0,0,0,0.8));
+      transition: transform 0.5s ease;
+      display: block;
+      background: transparent;
+    }
+    .video-thumb:hover .video-performer {
+      transform: translateY(-8px) scale(1.01);
+    }
+
+    /* Play button */
+    .video-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 62%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      transition: opacity 0.3s;
+    }
+    .play-circle {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      border: 2px solid var(--blue);
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .video-thumb:hover .play-circle {
+      background: var(--blue);
+      transform: scale(1.08);
+      box-shadow: 0 0 40px rgba(5,160,235,0.4);
+    }
+    .play-circle svg {
+      width: 30px;
+      height: 30px;
+    }
+    .play-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      font-weight: 400;
+    }
+
+    /* Iframe layer */
+    .video-iframe-layer {
+      display: none;
+      position: relative;
+      aspect-ratio: 16/9;
+    }
+    .video-iframe-layer.active { display: block; }
+    .video-iframe-layer iframe {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
+      border: none;
     }
-    .video-text p {
+
+    /* Footer row below stage */
+    .video-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      margin-top: 3.5rem;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .video-footer p {
       color: #c0c0c0;
-      line-height: 1.9;
+      line-height: 1.85;
       font-size: 0.97rem;
-      margin-bottom: 1.4rem;
+      max-width: 560px;
     }
 
     /* ─── TESTIMONIALS ────────────────────────────────────── */
@@ -537,7 +689,7 @@
       position: relative;
     }
     .testimonial-card::before {
-      content: '"';
+      content: '\201C';
       font-family: 'Cinzel', serif;
       font-size: 6rem;
       color: rgba(5,160,235,0.12);
@@ -589,9 +741,7 @@
       padding-bottom: 0.8rem;
       border-bottom: 1px solid rgba(5,160,235,0.2);
     }
-    .venue-list {
-      list-style: none;
-    }
+    .venue-list { list-style: none; }
     .venue-list li {
       color: var(--grey);
       font-size: 0.8rem;
@@ -601,29 +751,46 @@
     }
     .venue-list li:last-child { border-bottom: none; }
 
-    /* ─── CLIENTS ─────────────────────────────────────────── */
+    /* ─── CLIENTS / LOGOS ─────────────────────────────────── */
     #clients {
       background: var(--black);
-      padding: 5rem 4rem;
+      padding: 6rem 4rem;
     }
-    .clients-grid {
+    .logos-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 2.5rem;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem 4rem;
+      margin-top: 3.5rem;
+    }
+    .logo-item {
+      display: flex;
+      align-items: center;
       justify-content: center;
     }
-    .client-chip {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--grey2);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 0.5rem 1.2rem;
-      border-radius: 1px;
-      transition: border-color 0.3s, color 0.3s;
+    .brand-logo {
+      height: 34px;
+      width: auto;
+      max-width: 130px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.45;
+      transition: opacity 0.35s;
+      display: block;
     }
-    .client-chip:hover { border-color: var(--blue); color: var(--white); }
+    .brand-logo:hover { opacity: 0.9; }
+    .logo-text-fallback {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+    .logo-text-fallback:hover { color: rgba(255,255,255,0.7); }
 
     /* ─── FAMOUS ENCOUNTERS ───────────────────────────────── */
     #encounters {
@@ -721,10 +888,7 @@
     .contact-fields select { color: var(--grey2); }
     .contact-fields select option { background: var(--dark3); }
     .contact-msg { margin-bottom: 1.5rem; }
-    .contact-msg textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
+    .contact-msg textarea { min-height: 120px; resize: vertical; }
     .contact-msg textarea::placeholder { color: var(--grey2); }
     .btn-submit {
       width: 100%;
@@ -761,16 +925,8 @@
       color: var(--white);
     }
     .footer-logo span { color: var(--blue); }
-    .footer-copy {
-      font-size: 0.75rem;
-      color: var(--grey2);
-      letter-spacing: 0.08em;
-    }
-    .footer-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
+    .footer-copy { font-size: 0.75rem; color: var(--grey2); letter-spacing: 0.08em; }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
     .footer-links a {
       color: var(--grey2);
       text-decoration: none;
@@ -787,10 +943,7 @@
       transform: translateY(30px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
@@ -803,13 +956,17 @@
       .nav-links { gap: 1.5rem; }
       .hero-inner { padding: 6rem 2rem 3rem; gap: 2rem; }
       section { padding: 5rem 2rem; }
+      #video { padding: 5rem 2rem; }
       .about-grid { gap: 3rem; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .testimonials-grid { grid-template-columns: 1fr 1fr; }
       .venues-grid { grid-template-columns: repeat(2, 1fr); }
-      #video, #quote, #encounters, #contact { padding: 5rem 2rem; }
+      #quote, #encounters, #contact { padding: 5rem 2rem; }
       footer { padding: 2.5rem 2rem; }
       #clients { padding: 4rem 2rem; }
+      .video-footer { flex-direction: column; text-align: center; gap: 2rem; }
+      .video-footer p { max-width: 100%; }
+      .video-play-btn { left: 58%; }
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
@@ -828,14 +985,18 @@
       .services-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .venues-grid { grid-template-columns: 1fr 1fr; }
-      .video-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .contact-fields { grid-template-columns: 1fr; }
       footer { flex-direction: column; text-align: center; }
       .footer-links { justify-content: center; }
+      .video-performer { left: -5%; height: 105%; }
+      .video-play-btn { left: 65%; }
+      .logos-grid { gap: 2rem 2.5rem; }
     }
     @media (max-width: 480px) {
       .venues-grid { grid-template-columns: 1fr; }
       .stats-row { grid-template-columns: 1fr; gap: 1rem; }
+      .video-performer { display: none; }
+      .video-play-btn { left: 50%; }
     }
 
     /* ─── MOBILE NAV ──────────────────────────────────────── */
@@ -891,7 +1052,7 @@
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">&#10005;</button>
     <a href="#about" class="mobile-link">About</a>
     <a href="#services" class="mobile-link">Services</a>
     <a href="#video" class="mobile-link">Watch</a>
@@ -913,7 +1074,7 @@
         </h1>
         <p class="hero-tagline">His Magic Is Criminal</p>
         <p class="hero-desc">
-          A world-class comedy magician and <em>the only pickpocket entertainer in Southern Africa</em>. From intimate close-up wonder to commanding the stage — expect the unexpected.
+          A world-class comedy magician and <em>the only pickpocket entertainer in Southern Africa</em>. From intimate close-up wonder to commanding the stage. Expect the unexpected.
         </p>
         <div class="hero-actions">
           <a href="#contact" class="btn-primary">Book The Bandit</a>
@@ -924,9 +1085,8 @@
         <div class="hero-img-frame">
           <img
             src="images/bandit-hero.jpg"
-            alt="The Bandit – South African Magician"
+            alt="The Bandit, South African Magician"
             class="hero-img"
-            onerror="this.style.background='linear-gradient(135deg,#111 0%,#1a1a1a 100%)'; this.removeAttribute('src');"
           />
           <div class="hero-badge">
             <strong>SA's #1</strong>
@@ -941,25 +1101,24 @@
   <!-- MARQUEE -->
   <div class="marquee-section">
     <div class="marquee-track">
-      <span class="marquee-item">Close-Up Magic</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">Stage Shows</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">Pickpocket Entertainment</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">Corporate Events</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">Mind Reading</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">Roaming Magic</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">MC Services</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">Illusion Shows</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">Family Shows</span><span class="marquee-dot">◆</span>
-      <!-- duplicate for seamless loop -->
-      <span class="marquee-item">Close-Up Magic</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">Stage Shows</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">Pickpocket Entertainment</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">Corporate Events</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">Mind Reading</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">Roaming Magic</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">MC Services</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">Illusion Shows</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">Family Shows</span><span class="marquee-dot">◆</span>
+      <span class="marquee-item">Close-Up Magic</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">Stage Shows</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">Pickpocket Entertainment</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">Corporate Events</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">Mind Reading</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">Roaming Magic</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">MC Services</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">Illusion Shows</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">Family Shows</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">Close-Up Magic</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">Stage Shows</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">Pickpocket Entertainment</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">Corporate Events</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">Mind Reading</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">Roaming Magic</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">MC Services</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">Illusion Shows</span><span class="marquee-dot">&#9670;</span>
+      <span class="marquee-item">Family Shows</span><span class="marquee-dot">&#9670;</span>
     </div>
   </div>
 
@@ -967,7 +1126,7 @@
   <section id="quote">
     <div class="container">
       <p class="big-quote reveal">"The <span>best pickpocket magician</span> in South Africa"</p>
-      <p class="quote-attr reveal reveal-delay-1">— Darren "Whackhead" Simpson, South African Radio Legend</p>
+      <p class="quote-attr reveal reveal-delay-1">Darren "Whackhead" Simpson, South African Radio Legend</p>
     </div>
   </section>
 
@@ -976,28 +1135,25 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-imgs reveal">
-          <img src="images/bandit-cards-1.jpg" alt="The Bandit performing card magic" class="about-img tall"
-            onerror="this.style.background='#1a1a1a'; this.removeAttribute('src');" />
-          <img src="images/bandit-cards-2.jpg" alt="The Bandit with playing cards" class="about-img"
-            onerror="this.style.background='#222'; this.removeAttribute('src');" />
-          <img src="images/bandit-balloon.jpg" alt="The Bandit performing" class="about-img"
-            onerror="this.style.background='#1a1a1a'; this.removeAttribute('src');" />
+          <img src="images/bandit-cards-1.jpg" alt="The Bandit performing card magic" class="about-img tall" />
+          <img src="images/bandit-cards-2.jpg" alt="The Bandit with playing cards" class="about-img" />
+          <img src="images/bandit-balloon.jpg" alt="The Bandit performing" class="about-img" />
         </div>
         <div class="about-text">
           <div class="section-label reveal">The Story</div>
           <h2 class="section-title reveal reveal-delay-1">Born to <em>Steal</em><br/>the Show</h2>
           <div class="divider reveal reveal-delay-2"></div>
           <p class="reveal reveal-delay-2">
-            Raised in the heart of Johannesburg, <strong>The Bandit</strong> is a world-class comedy magician who has spent years entertaining audiences young and old — across South Africa and internationally.
+            Raised in the heart of Johannesburg, <strong>The Bandit</strong> is a world-class comedy magician who has spent years entertaining audiences young and old, across South Africa and internationally.
           </p>
           <p class="reveal reveal-delay-3">
-            Trained under private tutelage by some of the world's finest — including <strong>Troye the Mentalist (SA)</strong> and <strong>Gregory Wilson (USA)</strong> — this former magic kid has evolved into a renowned seasoned professional.
+            Trained under private tutelage by some of the world's finest, including <strong>Troye the Mentalist (SA)</strong> and <strong>Gregory Wilson (USA)</strong>, this former magic kid has evolved into a renowned seasoned professional.
           </p>
           <p class="reveal reveal-delay-3">
             His passion for magic spans <strong>pickpocketing</strong>, fork bending, mind reading, and coin and card effects. Whether it's a corporate gala or an intimate dinner party, the Bandit is a sure winner.
           </p>
           <p class="reveal reveal-delay-4">
-            His unique blend of comedy and dramatic magic makes him one of the firm favourites amongst numerous private and corporate clients. His charming personality will make your guests feel right at home — and his magic will catapult them into a whole new world of awe and fascination.
+            His unique blend of comedy and dramatic magic makes him one of the firm favourites amongst numerous private and corporate clients. His charming personality will make your guests feel right at home, and his magic will catapult them into a whole new world of awe and fascination.
           </p>
           <div class="stats-row reveal reveal-delay-4">
             <div class="stat">
@@ -1025,8 +1181,8 @@
       <h2 class="section-title reveal reveal-delay-1">Performance <em>Offerings</em></h2>
       <div class="services-grid">
         <div class="service-card reveal">
-          <span class="service-icon">🃏</span>
-          <h3 class="service-title">Close-Up & Roaming Magic</h3>
+          <span class="service-icon">&#127183;</span>
+          <h3 class="service-title">Close-Up &amp; Roaming Magic</h3>
           <p class="service-desc">The ultimate ice-breaker. The Bandit moves among your guests creating intimate moments of astonishment with cards, coins, jewellery and everyday objects. Perfect pre-show or cocktail hour entertainment.</p>
           <div class="service-tags">
             <span class="tag">Walk-Around</span>
@@ -1035,7 +1191,7 @@
           </div>
         </div>
         <div class="service-card reveal reveal-delay-1">
-          <span class="service-icon">🎭</span>
+          <span class="service-icon">&#127917;</span>
           <h3 class="service-title">Professional Stage Shows</h3>
           <p class="service-desc">No problems with the spotlight. The Bandit commands the room, holding larger audiences captive with riveting illusions, comedy, and dramatic magic that leaves everyone gasping in disbelief.</p>
           <div class="service-tags">
@@ -1045,9 +1201,9 @@
           </div>
         </div>
         <div class="service-card reveal reveal-delay-2">
-          <span class="service-icon">👜</span>
+          <span class="service-icon">&#128092;</span>
           <h3 class="service-title">Pickpocket Entertainment</h3>
-          <p class="service-desc">Southern Africa's only pickpocket entertainer. Wallets, watches, belts, ties — all returned, all hilarious. An unforgettable act that generates incredible energy and audience participation.</p>
+          <p class="service-desc">Southern Africa's only pickpocket entertainer. Wallets, watches, belts, ties. All returned, all hilarious. An unforgettable act that generates incredible energy and audience participation.</p>
           <div class="service-tags">
             <span class="tag">Watch Steals</span>
             <span class="tag">Unique in SA</span>
@@ -1055,9 +1211,9 @@
           </div>
         </div>
         <div class="service-card reveal reveal-delay-1">
-          <span class="service-icon">🧠</span>
-          <h3 class="service-title">Mind Reading & Mentalism</h3>
-          <p class="service-desc">Trained by mentalist greats, The Bandit reads minds, predicts choices, and bends reality itself. Intimate or grand scale — this is the moment no one will stop talking about.</p>
+          <span class="service-icon">&#129504;</span>
+          <h3 class="service-title">Mind Reading &amp; Mentalism</h3>
+          <p class="service-desc">Trained by mentalist greats, The Bandit reads minds, predicts choices, and bends reality itself. Intimate or grand scale, this is the moment no one will stop talking about.</p>
           <div class="service-tags">
             <span class="tag">Mentalism</span>
             <span class="tag">Predictions</span>
@@ -1065,7 +1221,7 @@
           </div>
         </div>
         <div class="service-card reveal reveal-delay-2">
-          <span class="service-icon">🎤</span>
+          <span class="service-icon">&#127908;</span>
           <h3 class="service-title">MC Services</h3>
           <p class="service-desc">A natural on any stage, The Bandit brings the same charisma and energy to hosting your event, keeping the flow seamless and the audience engaged from start to finish.</p>
           <div class="service-tags">
@@ -1075,9 +1231,9 @@
           </div>
         </div>
         <div class="service-card reveal reveal-delay-3">
-          <span class="service-icon">✨</span>
-          <h3 class="service-title">Family & Promotional Shows</h3>
-          <p class="service-desc">Magic for all ages, adapted for any setting. Whether a family event, shopping centre activation or brand promotion — The Bandit tailors the experience to captivate every audience.</p>
+          <span class="service-icon">&#10024;</span>
+          <h3 class="service-title">Family &amp; Promotional Shows</h3>
+          <p class="service-desc">Magic for all ages, adapted for any setting. Whether a family event, shopping centre activation or brand promotion, The Bandit tailors the experience to captivate every audience.</p>
           <div class="service-tags">
             <span class="tag">Family Shows</span>
             <span class="tag">Promotional Magic</span>
@@ -1091,31 +1247,61 @@
   <!-- VIDEO -->
   <section id="video">
     <div class="container">
-      <div class="video-inner">
-        <div class="video-text">
-          <div class="section-label reveal">See It Live</div>
-          <h2 class="section-title reveal reveal-delay-1">Watch The <em>Magic</em><br/>Unfold</h2>
-          <div class="divider reveal reveal-delay-2"></div>
-          <p class="reveal reveal-delay-2">
-            Words can only do so much. Watch The Bandit in action — his seamless sleight of hand, his infectious charm, and his uncanny ability to leave an audience completely spellbound.
-          </p>
-          <p class="reveal reveal-delay-3">
-            Imagine a table levitating through mid-air, or money appearing right before your eyes. Now imagine what else this magician has up his sleeve...
-          </p>
-          <a href="#contact" class="btn-primary reveal reveal-delay-3" style="display:inline-block; margin-top:0.5rem;">Book Your Event</a>
-        </div>
-        <div class="reveal reveal-delay-1">
-          <div class="video-embed">
-            <iframe
-              src="https://www.youtube.com/embed/KXtSX7TxY1w?rel=0&color=white"
-              title="The Bandit – Magic Showreel"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
+
+      <div class="video-header reveal">
+        <div class="section-label">See It Live</div>
+        <h2 class="section-title">Watch The <em>Magic</em> Unfold</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="video-stage reveal reveal-delay-1">
+
+        <!-- Thumbnail (hidden after play clicked) -->
+        <div class="video-thumb" id="videoThumb" onclick="playVideo()" role="button" aria-label="Play showreel">
+          <div class="video-thumb-inner">
+            <div class="video-bg-text" aria-hidden="true">
+              <span>The Bandit</span>
+            </div>
+          </div>
+          <!-- Performer image bleeding out from the left -->
+          <img
+            src="images/comedy-49.jpg"
+            alt="The Bandit"
+            class="video-performer"
+            id="videoPerformer"
+          />
+          <div class="video-play-btn">
+            <div class="play-circle">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="30" cy="30" r="29" stroke="#05a0eb" stroke-width="1.5" fill="rgba(0,0,0,0.5)"/>
+                <polygon points="24,18 48,30 24,42" fill="#05a0eb"/>
+              </svg>
+            </div>
+            <span class="play-label">Watch The Bandit</span>
           </div>
         </div>
+
+        <!-- Iframe (shown after play clicked) -->
+        <div class="video-iframe-layer" id="videoIframe">
+          <iframe
+            id="ytPlayer"
+            src=""
+            data-src="https://www.youtube.com/embed/KXtSX7TxY1w?rel=0&autoplay=1&color=white"
+            title="The Bandit Magic Showreel"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
+
+      <div class="video-footer reveal reveal-delay-2">
+        <p>
+          Words can only do so much. Watch The Bandit in action: his seamless sleight of hand, his infectious charm, and his uncanny ability to leave an audience completely spellbound. Imagine a table levitating through mid-air, or money appearing right before your eyes.
+        </p>
+        <a href="#contact" class="btn-primary" style="flex-shrink:0;">Book Your Event</a>
+      </div>
+
     </div>
   </section>
 
@@ -1126,9 +1312,9 @@
       <h2 class="section-title reveal reveal-delay-1">The <em>Verdict</em></h2>
       <div class="testimonials-grid">
         <div class="testimonial-card reveal">
-          <p class="testimonial-text">"The best pickpocket magician in South Africa. Absolutely incredible — the audience was completely floored."</p>
+          <p class="testimonial-text">"The best pickpocket magician in South Africa. Absolutely incredible. The audience was completely floored."</p>
           <p class="testimonial-author">Darren "Whackhead" Simpson</p>
-          <p class="testimonial-role">South African Radio & Comedy Legend</p>
+          <p class="testimonial-role">South African Radio &amp; Comedy Legend</p>
         </div>
         <div class="testimonial-card reveal reveal-delay-1">
           <p class="testimonial-text">"The Bandit is absolutely amazing. Our guests couldn't stop talking about his performance long after the event ended."</p>
@@ -1136,7 +1322,7 @@
           <p class="testimonial-role">Mercedes-Benz</p>
         </div>
         <div class="testimonial-card reveal reveal-delay-2">
-          <p class="testimonial-text">"I don't know how he does it. What an incredible show — truly one of the best entertainers we have ever had at our events."</p>
+          <p class="testimonial-text">"I don't know how he does it. What an incredible show, truly one of the best entertainers we have ever had at our events."</p>
           <p class="testimonial-author">Mahlatse</p>
           <p class="testimonial-role">Gautrain</p>
         </div>
@@ -1150,7 +1336,7 @@
       <div class="section-label reveal" style="justify-content:center;">Notable Victims</div>
       <h2 class="section-title reveal reveal-delay-1" style="text-align:center;">Pockets He's <em>Picked</em></h2>
       <div class="divider reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;"></div>
-      <p class="encounters-desc reveal reveal-delay-2">The Bandit is notorious for pickpocketing some of the biggest names in South Africa and the world — all in good fun, all returned.</p>
+      <p class="encounters-desc reveal reveal-delay-2">The Bandit is notorious for pickpocketing some of the biggest names in South Africa and the world, all in good fun, all returned.</p>
       <div class="encounters-names reveal reveal-delay-3">
         <span class="encounter-name">Dynamo</span>
         <span class="encounter-name">Darren Simpson</span>
@@ -1206,12 +1392,12 @@
           </ul>
         </div>
         <div class="venue-group reveal reveal-delay-3">
-          <h3 class="venue-group-title">Estates & Resorts</h3>
+          <h3 class="venue-group-title">Estates &amp; Resorts</h3>
           <ul class="venue-list">
             <li>Steyn City</li>
             <li>Sun City</li>
             <li>Fancourt</li>
-            <li>Blue Valley Golf & Country Estate</li>
+            <li>Blue Valley Golf &amp; Country Estate</li>
             <li>Eagle Canyon</li>
             <li>The Fairway</li>
           </ul>
@@ -1220,32 +1406,121 @@
     </div>
   </section>
 
-  <!-- CLIENTS -->
+  <!-- CLIENTS / LOGOS -->
   <section id="clients">
     <div class="container" style="text-align:center;">
       <div class="section-label reveal" style="justify-content:center;">Trusted By</div>
       <h2 class="section-title reveal reveal-delay-1">Clients &amp; <em>Brands</em></h2>
-      <div class="clients-grid reveal reveal-delay-2">
-        <span class="client-chip">ABSA</span>
-        <span class="client-chip">SAB</span>
-        <span class="client-chip">Toyota</span>
-        <span class="client-chip">Vodacom</span>
-        <span class="client-chip">MTN</span>
-        <span class="client-chip">Anglo American</span>
-        <span class="client-chip">Discovery</span>
-        <span class="client-chip">Sanlam</span>
-        <span class="client-chip">Barclays</span>
-        <span class="client-chip">First National Bank</span>
-        <span class="client-chip">KFC</span>
-        <span class="client-chip">Land Rover</span>
-        <span class="client-chip">Sasol</span>
-        <span class="client-chip">British American Tobacco</span>
-        <span class="client-chip">PPC Jupiter</span>
-        <span class="client-chip">Centriq Insurance</span>
-        <span class="client-chip">Dainfern College</span>
-        <span class="client-chip">Okuhle Media</span>
-        <span class="client-chip">GreenSky</span>
-        <span class="client-chip">MNI</span>
+      <div class="logos-grid reveal reveal-delay-2">
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/absa.co.za" alt="ABSA" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">ABSA</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/sab.co.za" alt="SAB" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">SAB</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/toyota.com" alt="Toyota" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">Toyota</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/vodacom.com" alt="Vodacom" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">Vodacom</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/mtn.com" alt="MTN" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">MTN</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/angloamerican.com" alt="Anglo American" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">Anglo American</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/discovery.co.za" alt="Discovery" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">Discovery</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/sanlam.co.za" alt="Sanlam" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">Sanlam</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/barclays.com" alt="Barclays" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">Barclays</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/fnb.co.za" alt="First National Bank" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">FNB</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/kfc.com" alt="KFC" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">KFC</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/landrover.com" alt="Land Rover" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">Land Rover</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/sasol.com" alt="Sasol" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">Sasol</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/bat.com" alt="British American Tobacco" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">BAT</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/ppc.co.za" alt="PPC" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">PPC Jupiter</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/centriq.co.za" alt="Centriq Insurance" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">Centriq Insurance</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/daiferncolege.co.za" alt="Dainfern College" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">Dainfern College</span>
+        </div>
+
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/mni.co.za" alt="MNI" class="brand-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="logo-text-fallback" style="display:none">MNI</span>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1258,7 +1533,7 @@
         <h2 class="section-title reveal reveal-delay-1">Book The <em>Bandit</em></h2>
         <div class="divider reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;"></div>
         <p class="reveal reveal-delay-2">
-          Ready to make your event truly unforgettable? Whether it's an intimate dinner or a grand stage show — The Bandit delivers a professional performance, show after show after show.
+          Ready to make your event truly unforgettable? Whether it's an intimate dinner or a grand stage show, The Bandit delivers a professional performance, show after show after show.
         </p>
         <div class="contact-card reveal reveal-delay-3">
           <h3>Send A Booking Enquiry</h3>
@@ -1282,7 +1557,7 @@
               </div>
             </div>
             <div class="contact-msg">
-              <textarea placeholder="Tell us about your event — venue, expected guests, any special requirements..."></textarea>
+              <textarea placeholder="Tell us about your event: venue, expected guests, any special requirements..."></textarea>
             </div>
             <button type="submit" class="btn-submit">Send Enquiry</button>
           </form>
@@ -1299,11 +1574,11 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Book</a></li>
     </ul>
-    <p class="footer-copy">© 2025 The Bandit. All rights reserved. Johannesburg, South Africa.</p>
+    <p class="footer-copy">&copy; 2025 The Bandit. All rights reserved. Johannesburg, South Africa.</p>
   </footer>
 
   <script>
-    // Nav scroll effect
+    // Nav scroll
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 60);
@@ -1322,9 +1597,19 @@
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-    }, { threshold: 0.12 });
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
+
+    // Video play
+    function playVideo() {
+      const thumb = document.getElementById('videoThumb');
+      const iframe = document.getElementById('videoIframe');
+      const player = document.getElementById('ytPlayer');
+      player.src = player.dataset.src;
+      thumb.style.display = 'none';
+      iframe.classList.add('active');
+    }
 
     // Form submit
     function handleSubmit(e) {
