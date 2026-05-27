@@ -553,44 +553,23 @@
       border: 1px solid rgba(5,160,235,0.15);
       overflow: hidden;
     }
-    /* Subtle grid texture inside the stage */
-    .video-thumb-inner::before {
-      content: '';
+    /* Thumbnail background image */
+    .video-thumb-bg-img {
       position: absolute;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(5,160,235,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(5,160,235,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       z-index: 0;
+      display: block;
     }
-    /* Large watermark text behind everything */
-    .video-bg-text {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1;
-      pointer-events: none;
-      overflow: hidden;
-    }
-    .video-bg-text span {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(4rem, 10vw, 9rem);
-      font-weight: 900;
-      color: rgba(255,255,255,0.03);
-      letter-spacing: 0.15em;
-      white-space: nowrap;
-      text-transform: uppercase;
-      user-select: none;
-    }
-    /* Right-side vignette so performer stands out */
+    /* Darkening overlay so performer and play button pop */
     .video-thumb-inner::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
+      background: linear-gradient(to right, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%);
       z-index: 2;
     }
 
@@ -786,12 +765,11 @@
       width: auto;
       max-width: 130px;
       object-fit: contain;
-      filter: brightness(0) invert(1);
-      opacity: 0.45;
+      opacity: 0.55;
       transition: opacity 0.35s;
       display: block;
     }
-    .brand-logo:hover { opacity: 0.9; }
+    .brand-logo:hover { opacity: 1; }
     .logo-text-fallback {
       font-size: 0.72rem;
       letter-spacing: 0.22em;
@@ -1328,9 +1306,7 @@
         <!-- Thumbnail (hidden after play clicked) -->
         <div class="video-thumb" id="videoThumb" onclick="playVideo()" role="button" aria-label="Play showreel">
           <div class="video-thumb-inner">
-            <div class="video-bg-text" aria-hidden="true">
-              <span>The Bandit</span>
-            </div>
+            <img src="YT-Thumbnail.png" alt="" class="video-thumb-bg-img" />
           </div>
           <!-- Performer image bleeding out from the left -->
           <img
@@ -1481,115 +1457,24 @@
       <div class="section-label reveal" style="justify-content:center;">Trusted By</div>
       <h2 class="section-title reveal reveal-delay-1">Clients &amp; <em>Brands</em></h2>
       <div class="logos-grid reveal reveal-delay-2">
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/absa.co.za" alt="ABSA" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">ABSA</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/sab.co.za" alt="SAB" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">SAB</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/toyota.com" alt="Toyota" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">Toyota</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/vodacom.com" alt="Vodacom" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">Vodacom</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/mtn.com" alt="MTN" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">MTN</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/angloamerican.com" alt="Anglo American" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">Anglo American</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/discovery.co.za" alt="Discovery" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">Discovery</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/sanlam.co.za" alt="Sanlam" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">Sanlam</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/barclays.com" alt="Barclays" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">Barclays</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/fnb.co.za" alt="First National Bank" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">FNB</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/kfc.com" alt="KFC" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">KFC</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/landrover.com" alt="Land Rover" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">Land Rover</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/sasol.com" alt="Sasol" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">Sasol</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/bat.com" alt="British American Tobacco" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">BAT</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/ppc.co.za" alt="PPC" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">PPC Jupiter</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/centriq.co.za" alt="Centriq Insurance" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">Centriq Insurance</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/daiferncolege.co.za" alt="Dainfern College" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">Dainfern College</span>
-        </div>
-
-        <div class="logo-item">
-          <img src="https://logo.clearbit.com/mni.co.za" alt="MNI" class="brand-logo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <span class="logo-text-fallback" style="display:none">MNI</span>
-        </div>
-
+        <div class="logo-item"><img src="white_logos/absa_white.webp" alt="ABSA" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/sab_white.webp" alt="SAB" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/toyota_white.webp" alt="Toyota" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/vodacom_white.webp" alt="Vodacom" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/mtn_white.webp" alt="MTN" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/anglo_american_white.webp" alt="Anglo American" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/discovery_white.webp" alt="Discovery" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/sanlam_white.webp" alt="Sanlam" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/barclays_white.webp" alt="Barclays" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/fnb_white.webp" alt="First National Bank" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/kfc_white.webp" alt="KFC" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/land_rover_white.webp" alt="Land Rover" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/sasol_white.webp" alt="Sasol" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/bat_white.webp" alt="British American Tobacco" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/ppc_jupiter_white.webp" alt="PPC Jupiter" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/centriq_insurance_white.webp" alt="Centriq Insurance" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/dainfern_college_white.webp" alt="Dainfern College" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/mni_white.webp" alt="MNI" class="brand-logo" /></div>
       </div>
     </div>
   </section>
