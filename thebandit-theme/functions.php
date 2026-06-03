@@ -111,7 +111,10 @@ function thebandit_handle_enquiry() {
 		wp_send_json_error( array( 'message' => 'Please provide a valid name and email.' ), 400 );
 	}
 
-	$headers = array( 'Content-Type: text/html; charset=UTF-8' );
+	$headers = array(
+		'Content-Type: text/html; charset=UTF-8',
+		'From: The Bandit <noreply@updates.thebandit.co.za>',
+	);
 
 	// 1) Notification to the owner.
 	$owner_subject = sprintf( 'New Booking Enquiry — %s%s', $name, $company ? " ({$company})" : '' );

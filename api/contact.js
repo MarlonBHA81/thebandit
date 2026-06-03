@@ -1,7 +1,7 @@
 export const config = { runtime: 'edge' };
 
 const OWNER_EMAIL = 'info@thebandit.co.za';
-const FROM_ADDRESS = 'The Bandit <noreply@thebandit.co.za>';
+const FROM_ADDRESS = 'The Bandit <noreply@updates.thebandit.co.za>';
 
 export default async function handler(req) {
   if (req.method !== 'POST') {
