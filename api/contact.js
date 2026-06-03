@@ -117,6 +117,7 @@ export default async function handler(req) {
       body: JSON.stringify({
         from: FROM_ADDRESS,
         to: [email],
+        reply_to: OWNER_EMAIL,
         subject: "Thanks for reaching out — The Bandit",
         html: customerHtml
       })

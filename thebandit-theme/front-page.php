@@ -311,6 +311,25 @@ get_header();
 		</div>
 	</section>
 
+	<!-- TIKTOK -->
+	<section id="tiktok">
+		<div class="container">
+			<div class="section-label reveal">Follow Along</div>
+			<h2 class="section-title reveal reveal-delay-1">Watch on <em>TikTok</em></h2>
+			<div class="tiktok-embed-wrap reveal reveal-delay-2">
+				<blockquote class="tiktok-embed"
+					cite="https://www.tiktok.com/@kevinkeuvelaar"
+					data-unique-id="kevinkeuvelaar"
+					data-embed-type="creator"
+					style="max-width:780px;min-width:288px;width:100%;">
+					<section>
+						<a target="_blank" href="https://www.tiktok.com/@kevinkeuvelaar">@kevinkeuvelaar</a>
+					</section>
+				</blockquote>
+			</div>
+		</div>
+	</section>
+
 	<!-- VENUES -->
 	<section id="venues">
 		<div class="container">
@@ -421,7 +440,11 @@ get_header();
 							<div class="contact-msg">
 								<textarea name="message" placeholder="Tell us about your event: venue, expected guests, any special requirements..."></textarea>
 							</div>
-							<button type="submit" class="btn-submit">Send Enquiry</button>
+							<div class="contact-direct">
+							<span>Or call us directly</span>
+							<a href="tel:+27879439435" class="contact-phone-link">+27 87 943 9435</a>
+						</div>
+						<button type="submit" class="btn-submit">Send Enquiry</button>
 						</form>
 					</div>
 

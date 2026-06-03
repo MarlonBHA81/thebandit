@@ -124,8 +124,9 @@ function thebandit_handle_enquiry() {
 
 	// 2) Branded auto-reply to the customer.
 	$customer_subject = 'Thanks for reaching out — The Bandit';
+	$customer_headers = array_merge( $headers, array( 'Reply-To: info@thebandit.co.za' ) );
 	$customer_body    = thebandit_customer_email_html( compact( 'name', 'company', 'event_date', 'event_type' ) );
-	$sent             = wp_mail( $email, $customer_subject, $customer_body, $headers );
+	$sent             = wp_mail( $email, $customer_subject, $customer_body, $customer_headers );
 
 	if ( ! $sent ) {
 		wp_send_json_error( array( 'message' => 'Email could not be sent.' ), 500 );

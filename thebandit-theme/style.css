@@ -967,6 +967,31 @@ section { padding: 4.5rem 4rem; }
   transition: background 0.3s;
 }
 .btn-submit:hover { background: #0490d4; }
+.contact-direct {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: var(--grey2);
+  letter-spacing: 0.04em;
+}
+.contact-phone-link {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.contact-phone-link:hover { text-decoration: underline; }
+/* TikTok section */
+#tiktok { background: var(--dark2); }
+.tiktok-embed-wrap { display: flex; justify-content: center; margin-top: 2rem; }
+/* Footer social */
+.footer-social { color: var(--grey2); transition: color 0.3s; display: flex; align-items: center; }
+.footer-social:hover { color: var(--white); }
 
 /* WPForms / Contact Form 7 styling to match the brand */
 .contact-form-col .wpforms-field-label,
