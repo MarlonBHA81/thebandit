@@ -1,16 +1,17 @@
 /*
-Theme Name: The Bandit
-Theme URI: https://www.thebandit.co.za
+Theme Name: Story Advantage WP Theme
+Theme URI: https://storyadvantage.agency
 Author: Story Advantage Marketing Agency
 Author URI: https://storyadvantage.agency
-Description: Custom one-page theme for The Bandit, South Africa's premier comedy magician and pickpocket entertainer. Brand colours #05a0eb and #000000.
+Description: Premium one-page WordPress theme by Story Advantage. Built for The Bandit, South Africa's #1 magician. Brand colours #05a0eb and #000000, Cinzel + Inter typography.
 Version: 1.0.0
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: thebandit
+Text Domain: story-advantage-wp
+Tags: one-page, dark, custom-colors, entertainment
 */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1051,48 +1052,78 @@ footer {
   .hero-inner { padding: 6rem 2rem 3rem; gap: 2rem; }
   section { padding: 3rem 2rem; }
   #video { padding: 3rem 2rem; }
+  #quote, #encounters, #contact, #clients { padding: 3rem 2rem; }
+  footer { padding: 2rem 2rem; }
   .about-grid { gap: 3rem; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .testimonials-grid { grid-template-columns: 1fr 1fr; }
   .venues-grid { grid-template-columns: repeat(2, 1fr); }
-  #quote, #encounters, #contact { padding: 3rem 2rem; }
-  footer { padding: 2rem 2rem; }
-  #clients { padding: 3rem 2rem; }
   .video-footer { flex-direction: column; text-align: center; gap: 2rem; }
   .video-footer p { max-width: 100%; }
   .video-play-btn { left: 58%; }
+  .logos-grid { grid-template-columns: repeat(6, 1fr); gap: 1.5rem; }
 }
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
-  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  /* Hero */
+  .hero-inner { grid-template-columns: 1fr; text-align: center; padding: 5rem 1.5rem 3rem; gap: 2.5rem; }
   .hero-text { max-width: 100%; }
   .hero-img-wrap { order: -1; }
-  .hero-img-frame { width: 280px; }
+  .hero-img-frame { width: 260px; margin: 0 auto; }
   .hero-eyebrow { justify-content: center; }
-  .hero-badge { left: 50%; transform: translateX(-50%); bottom: -4rem; }
+  .hero-badge { display: none; }
   .hero-actions { justify-content: center; }
-  .about-grid { grid-template-columns: 1fr; }
-  .about-img-single { max-width: 380px; margin: 0 auto; }
-  .stats-row { grid-template-columns: repeat(3, 1fr); }
+  .hero-desc { font-size: 0.95rem; margin: 0 auto 2rem; }
+  /* Sections */
+  section { padding: 2.5rem 1.25rem; }
+  #quote, #encounters, #contact, #clients { padding: 2.5rem 1.25rem; }
+  #video { padding: 2.5rem 1.25rem; }
+  .section-title { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+  /* About */
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-img-single { max-width: 300px; margin: 0 auto; }
+  .about-img-main { aspect-ratio: 4/5; }
+  .stats-row { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  /* Services */
   .services-grid { grid-template-columns: 1fr; }
+  /* Testimonials */
   .testimonials-grid { grid-template-columns: 1fr; }
+  /* Venues */
   .venues-grid { grid-template-columns: 1fr 1fr; }
-  .contact-fields { grid-template-columns: 1fr; }
+  /* Logos */
+  .logos-grid { grid-template-columns: repeat(4, 1fr); gap: 1.2rem 1rem; max-width: 100%; }
+  .brand-logo { height: 36px; }
+  /* Video */
+  .video-play-btn { left: 50%; transform: translate(-50%, -50%); }
+  /* Contact */
   .contact-grid { grid-template-columns: 1fr; }
-  .contact-image-col { min-height: 320px; }
-  .contact-form-col { padding: 2.5rem 1.5rem; }
-  footer { flex-direction: column; text-align: center; }
-  .footer-links { justify-content: center; }
-  .video-performer { left: -5%; height: 105%; }
-  .video-play-btn { left: 65%; }
-  .logos-grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem 1.5rem; }
+  .contact-image-col { min-height: 280px; }
+  .contact-form-col { padding: 2rem 1.25rem; }
+  .contact-fields { grid-template-columns: 1fr; }
+  /* Footer */
+  footer { flex-direction: column; text-align: center; gap: 0.75rem; }
+  .footer-copy { font-size: 0.7rem; }
 }
 @media (max-width: 480px) {
-  .venues-grid { grid-template-columns: 1fr; }
+  .hero-img-frame { width: 220px; }
+  .hero-title { font-size: clamp(3rem, 14vw, 4rem); }
+  .hero-tagline { font-size: 0.75rem; }
   .stats-row { grid-template-columns: 1fr; gap: 1rem; }
-  .video-performer { display: none; }
-  .video-play-btn { left: 50%; }
+  .venues-grid { grid-template-columns: 1fr; }
+  .logos-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem 0.75rem; }
+  .brand-logo { height: 30px; }
+  .encounter-name { font-size: 0.68rem; padding: 0.4rem 0.9rem; }
+  .service-card { padding: 2rem 1.5rem; }
+  .testimonial-card { padding: 2rem 1.5rem; }
+  .big-quote { font-size: clamp(1.4rem, 6vw, 2rem); }
+  .play-circle { width: 68px; height: 68px; }
+  .btn-primary, .btn-outline { padding: 0.8rem 1.6rem; font-size: 0.73rem; }
+}
+@media (max-width: 360px) {
+  .logos-grid { grid-template-columns: repeat(2, 1fr); }
+  nav { padding: 1rem 1.25rem; }
+  .hero-inner { padding: 4.5rem 1.25rem 2.5rem; }
 }
 
 /* ─── MOBILE NAV ──────────────────────────────────────── */

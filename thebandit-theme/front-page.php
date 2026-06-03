@@ -21,7 +21,7 @@ get_header();
 				</h1>
 				<p class="hero-tagline">His Magic Is Criminal</p>
 				<p class="hero-desc">
-					South Africa's #1 magician. A master of <em>close-up magic, pickpocket entertainment and hypnosis</em> — from intimate table magic to commanding the stage. Expect the unexpected.
+					South Africa's #1 magician. A master of <em>close-up magic, pickpocket entertainment and hypnosis</em>, from intimate table magic to commanding the stage. Expect the unexpected.
 				</p>
 				<div class="hero-actions">
 					<a href="#contact" class="btn-primary">Book The Bandit</a>
@@ -83,7 +83,7 @@ get_header();
 					<h2 class="section-title reveal reveal-delay-1">Born to <em>Steal</em><br/>the Show</h2>
 					<div class="divider reveal reveal-delay-2"></div>
 					<p class="reveal reveal-delay-2">
-						Raised in the heart of Johannesburg, <strong>The Bandit</strong> is South Africa's #1 magician — a world-class entertainer who has spent years mesmerising audiences young and old, across South Africa and internationally.
+						Raised in the heart of Johannesburg, <strong>The Bandit</strong> is South Africa's #1 magician, a world-class entertainer who has spent years mesmerising audiences young and old, across South Africa and internationally.
 					</p>
 					<p class="reveal reveal-delay-3">
 						Trained under private tutelage by some of the world's finest, including <strong>Troye the Mentalist (SA)</strong> and <strong>Gregory Wilson (USA)</strong>, this former magic kid has evolved into a renowned seasoned professional.
@@ -142,7 +142,7 @@ get_header();
 				<div class="service-card reveal reveal-delay-2">
 					<span class="service-icon">&#128092;</span>
 					<h3 class="service-title">Pickpocket Entertainment</h3>
-					<p class="service-desc">The only pickpocket entertainer in Southern Africa. Wallets, watches, belts, ties — all stolen, all returned, all hilarious. An unforgettable act that generates incredible energy and has audiences screaming with laughter.</p>
+					<p class="service-desc">The only pickpocket entertainer in Southern Africa. Wallets, watches, belts, ties. All stolen, all returned, all hilarious. An unforgettable act that generates incredible energy and has audiences screaming with laughter.</p>
 					<div class="service-tags">
 						<span class="tag">Watch Steals</span>
 						<span class="tag">Unique in SA</span>
@@ -152,7 +152,7 @@ get_header();
 				<div class="service-card reveal reveal-delay-1">
 					<span class="service-icon">&#129504;</span>
 					<h3 class="service-title">Hypnotism</h3>
-					<p class="service-desc">A certified hypnotist, The Bandit takes willing volunteers on an unforgettable journey — live on stage. Hilarious, mind-bending and completely unique. The moment your audience will never stop talking about.</p>
+					<p class="service-desc">A certified hypnotist, The Bandit takes willing volunteers on an unforgettable journey, live on stage. Hilarious, mind-bending and completely unique. The moment your audience will never stop talking about.</p>
 					<div class="service-tags">
 						<span class="tag">Mentalism</span>
 						<span class="tag">Predictions</span>
