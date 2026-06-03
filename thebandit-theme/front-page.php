@@ -13,20 +13,13 @@ get_header();
 		<div class="hero-bg"></div>
 		<div class="hero-grid-overlay"></div>
 		<div class="hero-inner">
-			<div class="hero-text">
+			<div class="hero-heading">
 				<div class="hero-eyebrow">South Africa's #1 Magician</div>
 				<h1 class="hero-title">
 					<span class="the">The</span>
 					<span class="name">Ban<span>dit</span></span>
 				</h1>
 				<p class="hero-tagline">His Magic Is Criminal</p>
-				<p class="hero-desc">
-					South Africa's #1 magician. A master of <em>close-up magic, pickpocket entertainment and hypnosis</em>, from intimate table magic to commanding the stage. Expect the unexpected.
-				</p>
-				<div class="hero-actions">
-					<a href="#contact" class="btn-primary">Book The Bandit</a>
-					<a href="#video" class="btn-outline">Watch Him Work</a>
-				</div>
 			</div>
 			<div class="hero-img-wrap">
 				<div class="hero-img-frame">
@@ -35,6 +28,15 @@ get_header();
 						<strong>SA's #1</strong>
 						Magician
 					</div>
+				</div>
+			</div>
+			<div class="hero-body">
+				<p class="hero-desc">
+					South Africa's #1 magician. A master of <em>close-up magic, pickpocket entertainment and hypnosis</em>, from intimate table magic to commanding the stage. Expect the unexpected.
+				</p>
+				<div class="hero-actions">
+					<a href="#contact" class="btn-primary">Book The Bandit</a>
+					<a href="#video" class="btn-outline">Watch Him Work</a>
 				</div>
 			</div>
 		</div>

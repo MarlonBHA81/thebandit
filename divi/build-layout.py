@@ -116,33 +116,52 @@ def heading(label, title_html, center=False):
 # ─── Build each section ────────────────────────────────────────────────
 sections = []
 
-# HERO
-hero_left = column(
-    text("South Africa's Magic Outlaw", {"text_text_color": BLUE,
+# HERO — 3 cols (heading / image / body) so mobile stacks in correct order.
+# A CSS code row overrides to a 2-col grid-template-areas layout on desktop.
+hero_css = code(
+    "<style>"
+    "@media(min-width:768px){"
+    "#hero .et_pb_row{"
+    "display:grid!important;"
+    "grid-template-columns:1fr 1fr!important;"
+    "grid-template-areas:'hd img' 'bd img'!important;"
+    "width:100%!important;}"
+    "#hero .et_pb_column:nth-child(1){grid-area:hd!important;align-self:end!important;}"
+    "#hero .et_pb_column:nth-child(2){grid-area:img!important;align-self:center!important;}"
+    "#hero .et_pb_column:nth-child(3){grid-area:bd!important;align-self:start!important;}"
+    "}"
+    "</style>"
+)
+hero_heading = column(
+    text("South Africa's #1 Magician", {"text_text_color": BLUE,
          "text_font": "Inter|600||on|||||", "text_letter_spacing": "4px",
          "text_font_size": "12px"})
     + text("<h1>THE <span style=\"color:#05a0eb;\">BANDIT</span></h1>",
            {"header_font": "Cinzel|900||on|||||", "header_text_color": WHITE,
             "header_font_size": "84px"})
     + text("His Magic Is Criminal", {"text_text_color": GREY,
-           "text_font": "Cinzel||||||||", "text_letter_spacing": "3px"})
-    + text("A world-class comedy magician and the only pickpocket entertainer "
-           "in Southern Africa. From intimate close-up wonder to commanding "
-           "the stage. Expect the unexpected.")
+           "text_font": "Cinzel||||||||", "text_letter_spacing": "3px"}),
+    "1_3")
+hero_img = column(image(IMG + "hero-cards.jpg", "The Bandit"), "1_3")
+hero_body = column(
+    text("South Africa's #1 magician. A master of close-up magic, pickpocket "
+         "entertainment and hypnosis, from intimate table magic to commanding "
+         "the stage. Expect the unexpected.")
     + button("Book The Bandit", "#contact")
     + button("Watch Him Work", "#video",
              {"button_bg_color": "rgba(0,0,0,0)", "button_border_width": "1px",
               "button_border_color": "rgba(255,255,255,0.25)"}),
-    "1_2")
-hero_right = column(image(IMG + "hero-cards.jpg", "The Bandit"), "1_2")
-sections.append(section(row(hero_left + hero_right, "1_2,1_2"), bg=BLACK,
-                        padding="160px|40px|100px|40px",
-                        extra={"module_id": "hero"}))
+    "1_3")
+sections.append(section(
+    row(column(hero_css), extra={"custom_padding": "0px|0px|0px|0px"})
+    + row(hero_heading + hero_img + hero_body, "1_3,1_3,1_3"),
+    bg=BLACK, padding="160px|40px|100px|40px",
+    extra={"module_id": "hero"}))
 
 # MARQUEE
 marquee_items = ["Close-Up Magic", "Stage Shows", "Pickpocket Entertainment",
-                 "Corporate Events", "Roaming Magic", "MC Services",
-                 "Illusion Shows", "Family Shows"]
+                 "Hypnotism", "Corporate Events", "Roaming Magic", "MC Services",
+                 "Illusion Shows"]
 chips = " &#9670; ".join(marquee_items * 2)
 marquee_html = (
     "<style>.bandit-marquee{overflow:hidden;background:#05a0eb;}"
