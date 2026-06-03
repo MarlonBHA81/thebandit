@@ -221,9 +221,10 @@ services = [
     ("&#128092; Pickpocket Entertainment",
      "Southern Africa's only pickpocket entertainer. Wallets, watches, belts, "
      "ties. All returned, all hilarious."),
-    ("&#129504; Mind Reading &amp; Mentalism",
-     "Trained by mentalist greats, The Bandit reads minds, predicts choices, "
-     "and bends reality itself."),
+    ("&#129504; Hypnotism",
+     "A certified hypnotist, The Bandit takes willing volunteers on an "
+     "unforgettable journey, live on stage. Hilarious, mind-bending and "
+     "completely unique."),
     ("&#127908; MC Services",
      "A natural on any stage, The Bandit keeps the flow seamless and the "
      "audience engaged from start to finish."),
@@ -312,6 +313,48 @@ sections.append(section(
     + row(vcells, "1_4,1_4,1_4,1_4"),
     bg=DARK, extra={"module_id": "venues"}))
 
+# TIKTOK
+tiktok_html = (
+    "<style>"
+    ".bandit-tt-win{max-width:780px;width:100%;margin:0 auto;"
+    "border-top:2px solid #05a0eb;"
+    "box-shadow:0 0 80px rgba(5,160,235,.12),0 8px 40px rgba(0,0,0,.6);"
+    "border-radius:0 0 4px 4px;}"
+    ".bandit-tt-hdr{display:flex;align-items:center;gap:.65rem;background:#000;"
+    "padding:.75rem 1.1rem;border-bottom:1px solid rgba(255,255,255,.07);}"
+    ".bandit-tt-handle{color:#fff;font-size:.82rem;letter-spacing:.06em;"
+    "font-weight:500;flex:1;font-family:Inter,sans-serif;}"
+    ".bandit-tt-follow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;"
+    "color:#05a0eb;text-decoration:none;border:1px solid rgba(5,160,235,.4);"
+    "padding:.3rem .75rem;border-radius:2px;transition:background .3s,color .3s;}"
+    ".bandit-tt-follow:hover{background:#05a0eb;color:#fff;}"
+    "</style>"
+    "<div class=\"bandit-tt-win\">"
+    "<div class=\"bandit-tt-hdr\">"
+    "<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"#fff\" aria-hidden=\"true\">"
+    "<path d=\"M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 "
+    "2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 "
+    "6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 "
+    "006.33-6.34V9.05a8.16 8.16 0 004.78 1.52V7.11a4.85 4.85 0 01-1.01-.42z\"/>"
+    "</svg>"
+    "<span class=\"bandit-tt-handle\">@kevinkeuvelaar</span>"
+    "<a href=\"https://www.tiktok.com/@kevinkeuvelaar\" target=\"_blank\" "
+    "class=\"bandit-tt-follow\">Follow</a>"
+    "</div>"
+    "<blockquote class=\"tiktok-embed\" cite=\"https://www.tiktok.com/@kevinkeuvelaar\" "
+    "data-unique-id=\"kevinkeuvelaar\" data-embed-type=\"creator\" "
+    "style=\"max-width:780px;min-width:288px;width:100%;margin:0;\">"
+    "<section><a target=\"_blank\" href=\"https://www.tiktok.com/@kevinkeuvelaar\">"
+    "@kevinkeuvelaar</a></section>"
+    "</blockquote>"
+    "<script async src=\"https://www.tiktok.com/embed.js\"></script>"
+    "</div>"
+)
+sections.append(section(
+    heading("Follow Along", "<h2>Latest on <span style=\"color:#05a0eb;\">TikTok</span></h2>", center=True)
+    + row(column(code(tiktok_html))),
+    bg=DARK, extra={"module_id": "tiktok"}))
+
 # CONTACT
 contact_form = (
     "[et_pb_contact_form _builder_version=\"" + BV + "\" "
@@ -330,8 +373,18 @@ contact_form = (
     "[et_pb_contact_field field_id=\"Message\" field_title=\"Tell us about your event\" "
     "field_type=\"text\" fullwidth_field=\"on\" _builder_version=\"" + BV + "\"][/et_pb_contact_field]"
     "[/et_pb_contact_form]")
+phone_cta = (
+    "<div style=\"display:flex;align-items:center;justify-content:space-between;"
+    "gap:.75rem;margin-top:1rem;font-size:.8rem;color:#aaa;letter-spacing:.04em;"
+    "font-family:Inter,sans-serif;padding:0 4px;\">"
+    "<span>Or call us directly</span>"
+    "<a href=\"tel:+27879439435\" style=\"color:#05a0eb;text-decoration:none;"
+    "font-weight:500;font-size:.95rem;letter-spacing:.05em;white-space:nowrap;\">"
+    "+27 87 943 9435</a>"
+    "</div>"
+)
 contact_cells = (column(image(IMG + "contact-hands-up.png", "The Bandit"), "1_2")
-                 + column(contact_form, "1_2"))
+                 + column(contact_form + code(phone_cta), "1_2"))
 sections.append(section(
     heading("Get In Touch", "<h2>Book The <span style=\"color:#05a0eb;\">Bandit</span></h2>", center=True)
     + row(contact_cells, "1_2,1_2"),

@@ -156,9 +156,9 @@ get_header();
 					<h3 class="service-title">Hypnotism</h3>
 					<p class="service-desc">A certified hypnotist, The Bandit takes willing volunteers on an unforgettable journey, live on stage. Hilarious, mind-bending and completely unique. The moment your audience will never stop talking about.</p>
 					<div class="service-tags">
-						<span class="tag">Mentalism</span>
-						<span class="tag">Predictions</span>
-						<span class="tag">Psychological Magic</span>
+						<span class="tag">Stage Hypnosis</span>
+						<span class="tag">Volunteer Participation</span>
+						<span class="tag">Comedy Hypnosis</span>
 					</div>
 				</div>
 				<div class="service-card reveal reveal-delay-2">
