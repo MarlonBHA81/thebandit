@@ -93,6 +93,21 @@
       font-weight: 500 !important;
     }
     .nav-cta:hover { background: #0490d4; color: var(--white) !important; }
+    .nav-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.25rem;
+    }
+    .nav-phone {
+      font-size: 0.68rem;
+      color: var(--grey2);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      line-height: 1;
+      transition: color 0.3s;
+    }
+    .nav-phone:hover { color: var(--blue); }
     .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
     .hamburger span { display: block; width: 26px; height: 2px; background: var(--white); transition: 0.3s; }
 
@@ -971,7 +986,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 0.75rem;
-      margin-bottom: 1rem;
+      margin-top: 1rem;
       font-size: 0.8rem;
       color: var(--grey2);
       letter-spacing: 0.04em;
@@ -1105,6 +1120,7 @@
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
+      .nav-actions { display: none; }
       .hamburger { display: flex; }
       /* Hero */
       .hero-inner {
@@ -1226,8 +1242,11 @@
       <li><a href="#video">Watch</a></li>
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#venues">Venues</a></li>
-      <li><a href="#contact" class="nav-cta">Book Now</a></li>
     </ul>
+    <div class="nav-actions">
+      <a href="tel:+27879439435" class="nav-phone">+27 87 943 9435</a>
+      <a href="#contact" class="nav-cta">Book Now</a>
+    </div>
     <div class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </div>
@@ -1678,11 +1697,11 @@
               <div class="contact-msg">
                 <textarea name="message" placeholder="Tell us about your event: venue, expected guests, any special requirements..."></textarea>
               </div>
+              <button type="submit" class="btn-submit">Send Enquiry</button>
               <div class="contact-direct">
                 <span>Or call us directly</span>
                 <a href="tel:+27879439435" class="contact-phone-link">+27 87 943 9435</a>
               </div>
-              <button type="submit" class="btn-submit">Send Enquiry</button>
             </form>
           </div>
 

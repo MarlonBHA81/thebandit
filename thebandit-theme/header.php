@@ -31,8 +31,11 @@
 			<li><a href="#video">Watch</a></li>
 			<li><a href="#testimonials">Reviews</a></li>
 			<li><a href="#venues">Venues</a></li>
-			<li><a href="#contact" class="nav-cta">Book Now</a></li>
 		</ul>
+		<div class="nav-actions">
+			<a href="tel:+27879439435" class="nav-phone">+27 87 943 9435</a>
+			<a href="#contact" class="nav-cta">Book Now</a>
+		</div>
 		<div class="hamburger" id="hamburger" aria-label="Open menu">
 			<span></span><span></span><span></span>
 		</div>

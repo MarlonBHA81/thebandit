@@ -447,11 +447,11 @@ get_header();
 							<div class="contact-msg">
 								<textarea name="message" placeholder="Tell us about your event: venue, expected guests, any special requirements..."></textarea>
 							</div>
-							<div class="contact-direct">
+						<button type="submit" class="btn-submit">Send Enquiry</button>
+						<div class="contact-direct">
 							<span>Or call us directly</span>
 							<a href="tel:+27879439435" class="contact-phone-link">+27 87 943 9435</a>
 						</div>
-						<button type="submit" class="btn-submit">Send Enquiry</button>
 						</form>
 					</div>
 
