@@ -14,14 +14,14 @@ get_header();
 		<div class="hero-grid-overlay"></div>
 		<div class="hero-inner">
 			<div class="hero-text">
-				<div class="hero-eyebrow">South Africa's Magic Outlaw</div>
+				<div class="hero-eyebrow">South Africa's #1 Magician</div>
 				<h1 class="hero-title">
 					<span class="the">The</span>
 					<span class="name">Ban<span>dit</span></span>
 				</h1>
 				<p class="hero-tagline">His Magic Is Criminal</p>
 				<p class="hero-desc">
-					A world-class comedy magician and <em>the only pickpocket entertainer in Southern Africa</em>. From intimate close-up wonder to commanding the stage. Expect the unexpected.
+					South Africa's #1 magician. A master of <em>close-up magic, pickpocket entertainment and hypnosis</em> — from intimate table magic to commanding the stage. Expect the unexpected.
 				</p>
 				<div class="hero-actions">
 					<a href="#contact" class="btn-primary">Book The Bandit</a>
@@ -33,7 +33,7 @@ get_header();
 					<img src="<?php echo esc_url( thebandit_asset( 'images/hero-cards.jpg' ) ); ?>" alt="The Bandit, South African Magician" class="hero-img" />
 					<div class="hero-badge">
 						<strong>SA's #1</strong>
-						Pickpocket Entertainer
+						Magician
 					</div>
 				</div>
 			</div>
@@ -47,19 +47,19 @@ get_header();
 			<span class="marquee-item">Close-Up Magic</span><span class="marquee-dot">&#9670;</span>
 			<span class="marquee-item">Stage Shows</span><span class="marquee-dot">&#9670;</span>
 			<span class="marquee-item">Pickpocket Entertainment</span><span class="marquee-dot">&#9670;</span>
+			<span class="marquee-item">Hypnotism</span><span class="marquee-dot">&#9670;</span>
 			<span class="marquee-item">Corporate Events</span><span class="marquee-dot">&#9670;</span>
 			<span class="marquee-item">Roaming Magic</span><span class="marquee-dot">&#9670;</span>
 			<span class="marquee-item">MC Services</span><span class="marquee-dot">&#9670;</span>
 			<span class="marquee-item">Illusion Shows</span><span class="marquee-dot">&#9670;</span>
-			<span class="marquee-item">Family Shows</span><span class="marquee-dot">&#9670;</span>
 			<span class="marquee-item">Close-Up Magic</span><span class="marquee-dot">&#9670;</span>
 			<span class="marquee-item">Stage Shows</span><span class="marquee-dot">&#9670;</span>
 			<span class="marquee-item">Pickpocket Entertainment</span><span class="marquee-dot">&#9670;</span>
+			<span class="marquee-item">Hypnotism</span><span class="marquee-dot">&#9670;</span>
 			<span class="marquee-item">Corporate Events</span><span class="marquee-dot">&#9670;</span>
 			<span class="marquee-item">Roaming Magic</span><span class="marquee-dot">&#9670;</span>
 			<span class="marquee-item">MC Services</span><span class="marquee-dot">&#9670;</span>
 			<span class="marquee-item">Illusion Shows</span><span class="marquee-dot">&#9670;</span>
-			<span class="marquee-item">Family Shows</span><span class="marquee-dot">&#9670;</span>
 		</div>
 	</div>
 
@@ -83,13 +83,13 @@ get_header();
 					<h2 class="section-title reveal reveal-delay-1">Born to <em>Steal</em><br/>the Show</h2>
 					<div class="divider reveal reveal-delay-2"></div>
 					<p class="reveal reveal-delay-2">
-						Raised in the heart of Johannesburg, <strong>The Bandit</strong> is a world-class comedy magician who has spent years entertaining audiences young and old, across South Africa and internationally.
+						Raised in the heart of Johannesburg, <strong>The Bandit</strong> is South Africa's #1 magician — a world-class entertainer who has spent years mesmerising audiences young and old, across South Africa and internationally.
 					</p>
 					<p class="reveal reveal-delay-3">
 						Trained under private tutelage by some of the world's finest, including <strong>Troye the Mentalist (SA)</strong> and <strong>Gregory Wilson (USA)</strong>, this former magic kid has evolved into a renowned seasoned professional.
 					</p>
 					<p class="reveal reveal-delay-3">
-						His passion for magic spans <strong>pickpocketing</strong>, fork bending, mind reading, and coin and card effects. Whether it's a corporate gala or an intimate dinner party, the Bandit is a sure winner.
+						His arsenal spans <strong>close-up magic</strong>, <strong>pickpocketing</strong>, <strong>hypnotism</strong>, fork bending, and coin and card effects. Whether it's a corporate gala or an intimate dinner party, The Bandit is a sure winner.
 					</p>
 					<p class="reveal reveal-delay-4">
 						His unique blend of comedy and dramatic magic makes him one of the firm favourites amongst numerous private and corporate clients. His charming personality will make your guests feel right at home, and his magic will catapult them into a whole new world of awe and fascination.
@@ -101,7 +101,7 @@ get_header();
 						</div>
 						<div class="stat">
 							<span class="stat-number">SA's #1</span>
-							<span class="stat-label">Pickpocket Act</span>
+							<span class="stat-label">Magician</span>
 						</div>
 						<div class="stat">
 							<span class="stat-number">100+</span>
@@ -142,7 +142,7 @@ get_header();
 				<div class="service-card reveal reveal-delay-2">
 					<span class="service-icon">&#128092;</span>
 					<h3 class="service-title">Pickpocket Entertainment</h3>
-					<p class="service-desc">Southern Africa's only pickpocket entertainer. Wallets, watches, belts, ties. All returned, all hilarious. An unforgettable act that generates incredible energy and audience participation.</p>
+					<p class="service-desc">The only pickpocket entertainer in Southern Africa. Wallets, watches, belts, ties — all stolen, all returned, all hilarious. An unforgettable act that generates incredible energy and has audiences screaming with laughter.</p>
 					<div class="service-tags">
 						<span class="tag">Watch Steals</span>
 						<span class="tag">Unique in SA</span>
@@ -151,8 +151,8 @@ get_header();
 				</div>
 				<div class="service-card reveal reveal-delay-1">
 					<span class="service-icon">&#129504;</span>
-					<h3 class="service-title">Mind Reading &amp; Mentalism</h3>
-					<p class="service-desc">Trained by mentalist greats, The Bandit reads minds, predicts choices, and bends reality itself. Intimate or grand scale, this is the moment no one will stop talking about.</p>
+					<h3 class="service-title">Hypnotism</h3>
+					<p class="service-desc">A certified hypnotist, The Bandit takes willing volunteers on an unforgettable journey — live on stage. Hilarious, mind-bending and completely unique. The moment your audience will never stop talking about.</p>
 					<div class="service-tags">
 						<span class="tag">Mentalism</span>
 						<span class="tag">Predictions</span>
