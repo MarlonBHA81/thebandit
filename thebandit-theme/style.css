@@ -944,6 +944,10 @@ section { padding: 4.5rem 4rem; }
 .contact-fields input::placeholder { color: var(--grey2); }
 .contact-fields select { color: var(--grey2); }
 .contact-fields select option { background: var(--dark3); }
+.date-field-wrap { display: flex; flex-direction: column; gap: 0.3rem; }
+.date-label { font-size: 0.72rem; color: var(--grey2); letter-spacing: 0.08em; padding-left: 0.1rem; }
+.contact-fields input[type="date"] { color-scheme: dark; color: var(--white); }
+.contact-fields input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.6); cursor: pointer; }
 .contact-msg { margin-bottom: 1.5rem; }
 .contact-msg textarea { min-height: 120px; resize: vertical; }
 .contact-msg textarea::placeholder { color: var(--grey2); }

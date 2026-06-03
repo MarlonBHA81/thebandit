@@ -401,7 +401,10 @@ get_header();
 								<input type="text" name="name" placeholder="Your Name" required />
 								<input type="email" name="email" placeholder="Email Address" required />
 								<input type="text" name="company" placeholder="Company / Organisation" />
-								<input type="text" name="date" placeholder="Event Date" />
+								<div class="date-field-wrap">
+									<label class="date-label">Event Date</label>
+									<input type="date" name="date" />
+								</div>
 								<div class="contact-msg" style="grid-column: 1/-1;">
 									<select name="eventType">
 										<option value="" disabled selected>Type of Event</option>

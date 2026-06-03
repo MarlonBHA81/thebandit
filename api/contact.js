@@ -124,9 +124,10 @@ export default async function handler(req) {
   ]);
 
   if (!ownerRes.ok || !customerRes.ok) {
-    const err = await (ownerRes.ok ? customerRes : ownerRes).text();
-    console.error('Resend error:', err);
-    return new Response(JSON.stringify({ error: 'Email send failed' }), {
+    const failedRes = ownerRes.ok ? customerRes : ownerRes;
+    const errBody = await failedRes.text();
+    console.error('Resend error', failedRes.status, errBody);
+    return new Response(JSON.stringify({ error: 'Email send failed', detail: errBody }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' }
     });
