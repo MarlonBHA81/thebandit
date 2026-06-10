@@ -405,8 +405,10 @@ export = {
     "thumbnails": [],
 }
 
-with open("thebandit-divi-layout.json", "w", encoding="utf-8") as fh:
+import os
+_out = os.path.join(os.path.dirname(__file__), "thebandit-divi-layout.json")
+with open(_out, "w", encoding="utf-8") as fh:
     json.dump(export, fh, ensure_ascii=False, indent=2)
 
-print("Wrote thebandit-divi-layout.json")
+print("Wrote", _out)
 print("Sections:", len(sections), "| layout length:", len(layout), "chars")
