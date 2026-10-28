@@ -23,7 +23,7 @@ get_header();
 			</div>
 			<div class="hero-img-wrap">
 				<div class="hero-img-frame">
-					<img src="<?php echo esc_url( thebandit_asset( 'images/hero-cards.webp' ) ); ?>" alt="The Bandit, South African Magician" class="hero-img" width="1000" height="1504" fetchpriority="high" decoding="async" />
+					<img src="<?php echo esc_url( thebandit_asset( 'images/hero-cards-880.webp' ) ); ?>" srcset="<?php echo esc_url( thebandit_asset( 'images/hero-cards-440.webp' ) ); ?> 440w, <?php echo esc_url( thebandit_asset( 'images/hero-cards-880.webp' ) ); ?> 880w" sizes="(max-width: 480px) 220px, (max-width: 768px) 260px, 420px" alt="The Bandit, South African Magician" class="hero-img" width="880" height="1323" fetchpriority="high" decoding="async" />
 					<div class="hero-badge">
 						<strong>SA's #1</strong>
 						Magician
@@ -78,7 +78,7 @@ get_header();
 		<div class="container">
 			<div class="about-grid">
 				<div class="about-img-single reveal">
-					<img src="<?php echo esc_url( thebandit_asset( 'images/about-illusion.webp' ) ); ?>" alt="The Bandit performing" class="about-img-main" width="900" height="1353" loading="lazy" decoding="async" />
+					<img src="<?php echo esc_url( thebandit_asset( 'images/about-illusion.webp' ) ); ?>" srcset="<?php echo esc_url( thebandit_asset( 'images/about-illusion-450.webp' ) ); ?> 450w, <?php echo esc_url( thebandit_asset( 'images/about-illusion.webp' ) ); ?> 900w" sizes="(max-width: 768px) 92vw, 550px" alt="The Bandit performing" class="about-img-main" width="900" height="1353" loading="lazy" decoding="async" />
 				</div>
 				<div class="about-text">
 					<div class="section-label reveal">The Story</div>
@@ -191,22 +191,22 @@ get_header();
 			<div class="section-label reveal" style="justify-content:center;">Trusted By</div>
 			<h2 class="section-title reveal reveal-delay-1">Clients &amp; <em>Brands</em></h2>
 			<div class="logos-grid reveal reveal-delay-2">
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/absa_white.webp' ) ); ?>" alt="ABSA" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/toyota_white.webp' ) ); ?>" alt="Toyota" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/mtn_white.webp' ) ); ?>" alt="MTN" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/anglo_american_white.webp' ) ); ?>" alt="Anglo American" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/discovery_white.webp' ) ); ?>" alt="Discovery" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/barclays_white.webp' ) ); ?>" alt="Barclays" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/FNB.webp' ) ); ?>" alt="First National Bank" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/KFC.webp' ) ); ?>" alt="KFC" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/land-rover.webp' ) ); ?>" alt="Land Rover" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/Sanlam.webp' ) ); ?>" alt="Sanlam" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/Vodacom.webp' ) ); ?>" alt="Vodacom" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/sasol_white.webp' ) ); ?>" alt="Sasol" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/bat_white.webp' ) ); ?>" alt="British American Tobacco" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/centriq_insurance_white.webp' ) ); ?>" alt="Centriq Insurance" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/dainfern_college_white.webp' ) ); ?>" alt="Dainfern College" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/mni_white.webp' ) ); ?>" alt="MNI" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/absa_white.webp' ) ); ?>" alt="ABSA" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/toyota_white.webp' ) ); ?>" alt="Toyota" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/mtn_white.webp' ) ); ?>" alt="MTN" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/anglo_american_white.webp' ) ); ?>" alt="Anglo American" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/discovery_white.webp' ) ); ?>" alt="Discovery" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/barclays_white.webp' ) ); ?>" alt="Barclays" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/FNB.webp' ) ); ?>" alt="First National Bank" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/KFC.webp' ) ); ?>" alt="KFC" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/land-rover.webp' ) ); ?>" alt="Land Rover" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/Sanlam.webp' ) ); ?>" alt="Sanlam" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/Vodacom.webp' ) ); ?>" alt="Vodacom" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/sasol_white.webp' ) ); ?>" alt="Sasol" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/bat_white.webp' ) ); ?>" alt="British American Tobacco" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/centriq_insurance_white.webp' ) ); ?>" alt="Centriq Insurance" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/dainfern_college_white.webp' ) ); ?>" alt="Dainfern College" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/mni_white.webp' ) ); ?>" alt="MNI" class="brand-logo" width="160" height="160" loading="lazy" decoding="async" /></div>
 			</div>
 		</div>
 	</section>
@@ -424,15 +424,15 @@ get_header();
 						?>
 						<form id="contact-form">
 							<div class="contact-fields">
-								<input type="text" name="name" placeholder="Your Name" required />
-								<input type="email" name="email" placeholder="Email Address" required />
-								<input type="text" name="company" placeholder="Company / Organisation" />
+								<input type="text" name="name" placeholder="Your Name" aria-label="Your name" autocomplete="name" required />
+								<input type="email" name="email" placeholder="Email Address" aria-label="Email address" autocomplete="email" required />
+								<input type="text" name="company" placeholder="Company / Organisation" aria-label="Company or organisation" autocomplete="organization" />
 								<div class="date-field-wrap">
-									<label class="date-label">Event Date</label>
-									<input type="date" name="date" />
+									<label class="date-label" for="event-date">Event Date</label>
+									<input type="date" id="event-date" name="date" />
 								</div>
 								<div class="contact-msg" style="grid-column: 1/-1;">
-									<select name="eventType">
+									<select name="eventType" id="event-type" aria-label="Type of event">
 										<option value="" disabled selected>Type of Event</option>
 										<option>Corporate Function</option>
 										<option>Wedding</option>
@@ -445,7 +445,7 @@ get_header();
 								</div>
 							</div>
 							<div class="contact-msg">
-								<textarea name="message" placeholder="Tell us about your event: venue, expected guests, any special requirements..."></textarea>
+								<textarea name="message" aria-label="Tell us about your event" placeholder="Tell us about your event: venue, expected guests, any special requirements..."></textarea>
 							</div>
 						<button type="submit" class="btn-submit">Send Enquiry</button>
 						<div class="contact-direct">

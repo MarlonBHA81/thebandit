@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'THEBANDIT_VERSION' ) ) {
-	define( 'THEBANDIT_VERSION', '1.0.0' );
+	define( 'THEBANDIT_VERSION', '1.1.0' );
 }
 
 /**
@@ -46,19 +46,11 @@ add_action( 'after_setup_theme', 'thebandit_setup' );
  * Enqueue styles and scripts.
  */
 function thebandit_assets() {
-	// Google Fonts: Cinzel + Inter.
-	wp_enqueue_style(
-		'thebandit-fonts',
-		'https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600&display=swap',
-		array(),
-		null
-	);
-
 	// Main theme stylesheet (the style.css with all the design).
 	wp_enqueue_style(
 		'thebandit-style',
 		get_stylesheet_uri(),
-		array( 'thebandit-fonts' ),
+		array(),
 		THEBANDIT_VERSION
 	);
 
@@ -216,43 +208,43 @@ function thebandit_customer_email_html( $d ) {
 
 
 /**
- * Load the Google Fonts stylesheet without blocking first render.
+ * Meta description + canonical for the one-page home, so no SEO plugin is needed.
  *
- * The fonts already use display=swap, so text paints immediately in the
- * fallback and swaps once the webfont arrives. Switching the link to
- * media="print" and flipping it to "all" on load keeps the external request
- * off the critical rendering path, improving First Contentful Paint.
- *
- * @param string $html   The link tag HTML.
- * @param string $handle The style handle.
+ * Skipped when a known SEO plugin is active so the tags are never duplicated.
  */
-function thebandit_async_fonts( $html, $handle ) {
-	if ( 'thebandit-fonts' === $handle ) {
-		$html = str_replace(
-			" media='all' />",
-			" media='print' onload=\"this.media='all'\" />",
-			$html
-		);
-		$html .= '<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" /></noscript>';
+function thebandit_meta_tags() {
+	if ( ( ! is_front_page() && ! is_home() ) || defined( 'WPSEO_VERSION' ) || defined( 'RANK_MATH_VERSION' ) || defined( 'AIOSEO_VERSION' ) ) {
+		return;
 	}
-	return $html;
+	$description = apply_filters(
+		'thebandit_meta_description',
+		"The Bandit is South Africa's #1 magician: a world-class close-up magician, pickpocket entertainer and hypnotist. Book him for corporate events, weddings, stage shows and more."
+	);
+	echo '<meta name="description" content="' . esc_attr( $description ) . '" />' . "\n";
+	echo '<link rel="canonical" href="' . esc_url( home_url( '/' ) ) . '" />' . "\n";
 }
-add_filter( 'style_loader_tag', 'thebandit_async_fonts', 10, 2 );
+add_action( 'wp_head', 'thebandit_meta_tags', 1 );
 
 /**
- * Preconnect to Google Fonts for performance.
+ * Baseline security headers (Lighthouse "Trust and Safety").
+ *
+ * A strict Content-Security-Policy is intentionally not sent: the YouTube and
+ * TikTok embeds and the theme's inline scripts need a hand-tuned policy.
+ * Return false from the `thebandit_send_security_headers` filter to disable.
  */
-function thebandit_resource_hints( $hints, $relation_type ) {
-	if ( 'preconnect' === $relation_type ) {
-		$hints[] = 'https://fonts.googleapis.com';
-		$hints[] = array(
-			'href'        => 'https://fonts.gstatic.com',
-			'crossorigin' => 'anonymous',
-		);
+function thebandit_security_headers() {
+	if ( headers_sent() || ! apply_filters( 'thebandit_send_security_headers', true ) ) {
+		return;
 	}
-	return $hints;
+	if ( is_ssl() ) {
+		header( 'Strict-Transport-Security: max-age=31536000' );
+	}
+	header( 'X-Frame-Options: SAMEORIGIN' );
+	header( 'X-Content-Type-Options: nosniff' );
+	header( 'Referrer-Policy: strict-origin-when-cross-origin' );
+	header( 'Cross-Origin-Opener-Policy: same-origin-allow-popups' );
 }
-add_filter( 'wp_resource_hints', 'thebandit_resource_hints', 10, 2 );
+add_action( 'send_headers', 'thebandit_security_headers' );
 
 /**
  * Helper: echo a theme asset URL.

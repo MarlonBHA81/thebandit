@@ -32,6 +32,11 @@
 			s.async = true;
 			s.src = 'https://www.tiktok.com/embed.js';
 			document.body.appendChild( s );
+			// TikTok injects an untitled iframe; name it for assistive tech once it appears.
+			new MutationObserver( function ( _, mo ) {
+				var f = section.querySelector( 'iframe' );
+				if ( f ) { f.title = 'The Bandit on TikTok'; mo.disconnect(); }
+			} ).observe( section, { childList: true, subtree: true } );
 		}
 		if ( 'IntersectionObserver' in window ) {
 			var io = new IntersectionObserver( function ( entries ) {
