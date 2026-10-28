@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Bandit | South Africa's #1 Magician</title>
   <meta name="description" content="The Bandit is South Africa's #1 magician: a world-class close-up magician, pickpocket entertainer and hypnotist. Book him for corporate events, weddings, stage shows and more." />
-  <link rel="shortcut icon" href="Bandit%20Logo%201000x1000.png" type="image/png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="Bandit%20Logo%201000x1000.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="Bandit%20Logo%201000x1000.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="Bandit%20Logo%201000x1000.png" />
+  <link rel="shortcut icon" href="bandit-logo-icon.png" type="image/png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="bandit-logo-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="bandit-logo-icon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="bandit-logo-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="Bandit%20Images/Bandit%20Cards.webp" fetchpriority="high" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1233,7 +1235,7 @@
   <!-- NAV -->
   <nav id="navbar">
     <a href="#hero" class="nav-logo">
-      <img src="Bandit%20Logo%201000x1000.png" alt="The Bandit logo" />
+      <img src="bandit-logo.webp" alt="The Bandit logo" width="38" height="38" decoding="async" />
       The <span>Bandit</span>
     </a>
     <ul class="nav-links">
@@ -1279,9 +1281,10 @@
       <div class="hero-img-wrap">
         <div class="hero-img-frame">
           <img
-            src="Bandit%20Images/Bandit%20Cards.jpg"
+            src="Bandit%20Images/Bandit%20Cards.webp"
             alt="The Bandit, South African Magician"
             class="hero-img"
+            width="1000" height="1504" fetchpriority="high" decoding="async"
           />
           <div class="hero-badge">
             <strong>SA's #1</strong>
@@ -1337,7 +1340,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-img-single reveal">
-          <img src="Bandit%20Images/Bandit%20-%20Illusion.jpg" alt="The Bandit performing" class="about-img-main" />
+          <img src="Bandit%20Images/Bandit%20-%20Illusion.webp" alt="The Bandit performing" class="about-img-main" width="900" height="1353" loading="lazy" decoding="async" />
         </div>
         <div class="about-text">
           <div class="section-label reveal">The Story</div>
@@ -1450,22 +1453,22 @@
       <div class="section-label reveal" style="justify-content:center;">Trusted By</div>
       <h2 class="section-title reveal reveal-delay-1">Clients &amp; <em>Brands</em></h2>
       <div class="logos-grid reveal reveal-delay-2">
-        <div class="logo-item"><img src="white_logos/absa_white.webp" alt="ABSA" class="brand-logo" /></div>
-<div class="logo-item"><img src="white_logos/toyota_white.webp" alt="Toyota" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/mtn_white.webp" alt="MTN" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/anglo_american_white.webp" alt="Anglo American" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/discovery_white.webp" alt="Discovery" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/barclays_white.webp" alt="Barclays" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/FNB.png" alt="First National Bank" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/KFC.png" alt="KFC" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/Land%20Rover.png" alt="Land Rover" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/Sanlam.png" alt="Sanlam" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/Vodacom.png" alt="Vodacom" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/sasol_white.webp" alt="Sasol" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/bat_white.webp" alt="British American Tobacco" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/centriq_insurance_white.webp" alt="Centriq Insurance" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/dainfern_college_white.webp" alt="Dainfern College" class="brand-logo" /></div>
-        <div class="logo-item"><img src="white_logos/mni_white.webp" alt="MNI" class="brand-logo" /></div>
+        <div class="logo-item"><img src="white_logos/absa_white.webp" alt="ABSA" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+<div class="logo-item"><img src="white_logos/toyota_white.webp" alt="Toyota" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+        <div class="logo-item"><img src="white_logos/mtn_white.webp" alt="MTN" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+        <div class="logo-item"><img src="white_logos/anglo_american_white.webp" alt="Anglo American" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+        <div class="logo-item"><img src="white_logos/discovery_white.webp" alt="Discovery" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+        <div class="logo-item"><img src="white_logos/barclays_white.webp" alt="Barclays" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+        <div class="logo-item"><img src="white_logos/FNB.webp" alt="First National Bank" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+        <div class="logo-item"><img src="white_logos/KFC.webp" alt="KFC" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+        <div class="logo-item"><img src="white_logos/Land%20Rover.webp" alt="Land Rover" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+        <div class="logo-item"><img src="white_logos/Sanlam.webp" alt="Sanlam" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+        <div class="logo-item"><img src="white_logos/Vodacom.webp" alt="Vodacom" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+        <div class="logo-item"><img src="white_logos/sasol_white.webp" alt="Sasol" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+        <div class="logo-item"><img src="white_logos/bat_white.webp" alt="British American Tobacco" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+        <div class="logo-item"><img src="white_logos/centriq_insurance_white.webp" alt="Centriq Insurance" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+        <div class="logo-item"><img src="white_logos/dainfern_college_white.webp" alt="Dainfern College" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+        <div class="logo-item"><img src="white_logos/mni_white.webp" alt="MNI" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
       </div>
     </div>
   </section>
@@ -1485,7 +1488,7 @@
         <!-- Thumbnail (hidden after play clicked) -->
         <div class="video-thumb" id="videoThumb" onclick="playVideo()" role="button" aria-label="Play showreel">
           <div class="video-thumb-inner">
-            <img src="YT-Thumbnail.png" alt="" class="video-thumb-bg-img" />
+            <img src="YT-Thumbnail.webp" alt="" class="video-thumb-bg-img" width="1280" height="714" loading="lazy" decoding="async" />
           </div>
           <div class="video-play-btn">
             <div class="play-circle">
@@ -1664,7 +1667,7 @@
 
           <!-- Image column -->
           <div class="contact-image-col">
-            <img src="Bandit%20Images/Bandit%20Hands%20up%20-%20transparent.png" alt="The Bandit performing an illusion" />
+            <img src="Bandit%20Images/Bandit%20Hands%20up%20-%20transparent.webp" alt="The Bandit performing an illusion" width="900" height="1353" loading="lazy" decoding="async" />
           </div>
 
           <!-- Form column -->
@@ -1713,10 +1716,10 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo" style="display:flex;align-items:center;gap:0.6rem;">
-      <img src="Bandit%20Logo%201000x1000.png" alt="The Bandit logo" style="width:32px;height:32px;object-fit:contain;border-radius:50%;" />
+      <img src="bandit-logo.webp" alt="The Bandit logo" width="32" height="32" loading="lazy" decoding="async" style="width:32px;height:32px;object-fit:contain;border-radius:50%;" />
       The <span>Bandit</span>
     </div>
-    <p class="footer-copy">&copy; 2026 The Bandit. All rights reserved | Designed by <a href="https://storyadvantage.agency" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">Story Advantage Marketing Agency</a></p>
+    <p class="footer-copy">&copy; 2026 The Bandit. All rights reserved | Designed by <a href="https://storyadvantage.agency/project/the-bandit/" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">Story Advantage Marketing Agency</a></p>
     <a href="https://www.tiktok.com/@kevinkeuvelaar" target="_blank" rel="noopener" aria-label="TikTok" class="footer-social">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.05a8.16 8.16 0 004.78 1.52V7.11a4.85 4.85 0 01-1.01-.42z"/></svg>
     </a>
@@ -1793,6 +1796,29 @@
     }
   </script>
 
-  <script async src="https://www.tiktok.com/embed.js"></script>
+  <script>
+  /* Lazy-load the TikTok embed only when its section nears the viewport. */
+  (function () {
+    var section = document.getElementById('tiktok');
+    if (!section) { return; }
+    var loaded = false;
+    function loadTikTok() {
+      if (loaded) { return; }
+      loaded = true;
+      var sc = document.createElement('script');
+      sc.async = true;
+      sc.src = 'https://www.tiktok.com/embed.js';
+      document.body.appendChild(sc);
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { loadTikTok(); io.disconnect(); } });
+      }, { rootMargin: '400px' });
+      io.observe(section);
+    } else {
+      loadTikTok();
+    }
+  })();
+  </script>
 </body>
 </html>

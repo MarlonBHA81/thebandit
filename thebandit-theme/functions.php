@@ -216,6 +216,30 @@ function thebandit_customer_email_html( $d ) {
 
 
 /**
+ * Load the Google Fonts stylesheet without blocking first render.
+ *
+ * The fonts already use display=swap, so text paints immediately in the
+ * fallback and swaps once the webfont arrives. Switching the link to
+ * media="print" and flipping it to "all" on load keeps the external request
+ * off the critical rendering path, improving First Contentful Paint.
+ *
+ * @param string $html   The link tag HTML.
+ * @param string $handle The style handle.
+ */
+function thebandit_async_fonts( $html, $handle ) {
+	if ( 'thebandit-fonts' === $handle ) {
+		$html = str_replace(
+			" media='all' />",
+			" media='print' onload=\"this.media='all'\" />",
+			$html
+		);
+		$html .= '<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" /></noscript>';
+	}
+	return $html;
+}
+add_filter( 'style_loader_tag', 'thebandit_async_fonts', 10, 2 );
+
+/**
  * Preconnect to Google Fonts for performance.
  */
 function thebandit_resource_hints( $hints, $relation_type ) {

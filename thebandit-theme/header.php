@@ -10,10 +10,11 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="shortcut icon" href="<?php echo esc_url( thebandit_asset( 'images/bandit-logo.png' ) ); ?>" type="image/png" />
-	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url( thebandit_asset( 'images/bandit-logo.png' ) ); ?>" />
-	<link rel="icon" type="image/png" sizes="192x192" href="<?php echo esc_url( thebandit_asset( 'images/bandit-logo.png' ) ); ?>" />
-	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url( thebandit_asset( 'images/bandit-logo.png' ) ); ?>" />
+	<link rel="shortcut icon" href="<?php echo esc_url( thebandit_asset( 'images/bandit-logo-icon.png' ) ); ?>" type="image/png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url( thebandit_asset( 'images/bandit-logo-icon.png' ) ); ?>" />
+	<link rel="icon" type="image/png" sizes="192x192" href="<?php echo esc_url( thebandit_asset( 'images/bandit-logo-icon.png' ) ); ?>" />
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url( thebandit_asset( 'images/bandit-logo-icon.png' ) ); ?>" />
+	<link rel="preload" as="image" href="<?php echo esc_url( thebandit_asset( 'images/hero-cards.webp' ) ); ?>" fetchpriority="high" />
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -22,7 +23,7 @@
 	<!-- NAV -->
 	<nav id="navbar">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>#hero" class="nav-logo">
-			<img src="<?php echo esc_url( thebandit_asset( 'images/bandit-logo.png' ) ); ?>" alt="The Bandit logo" />
+			<img src="<?php echo esc_url( thebandit_asset( 'images/bandit-logo.webp' ) ); ?>" alt="The Bandit logo" width="38" height="38" decoding="async" />
 			The <span>Bandit</span>
 		</a>
 		<ul class="nav-links">

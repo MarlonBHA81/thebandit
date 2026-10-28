@@ -23,7 +23,7 @@ get_header();
 			</div>
 			<div class="hero-img-wrap">
 				<div class="hero-img-frame">
-					<img src="<?php echo esc_url( thebandit_asset( 'images/hero-cards.jpg' ) ); ?>" alt="The Bandit, South African Magician" class="hero-img" />
+					<img src="<?php echo esc_url( thebandit_asset( 'images/hero-cards.webp' ) ); ?>" alt="The Bandit, South African Magician" class="hero-img" width="1000" height="1504" fetchpriority="high" decoding="async" />
 					<div class="hero-badge">
 						<strong>SA's #1</strong>
 						Magician
@@ -78,7 +78,7 @@ get_header();
 		<div class="container">
 			<div class="about-grid">
 				<div class="about-img-single reveal">
-					<img src="<?php echo esc_url( thebandit_asset( 'images/about-illusion.jpg' ) ); ?>" alt="The Bandit performing" class="about-img-main" />
+					<img src="<?php echo esc_url( thebandit_asset( 'images/about-illusion.webp' ) ); ?>" alt="The Bandit performing" class="about-img-main" width="900" height="1353" loading="lazy" decoding="async" />
 				</div>
 				<div class="about-text">
 					<div class="section-label reveal">The Story</div>
@@ -191,22 +191,22 @@ get_header();
 			<div class="section-label reveal" style="justify-content:center;">Trusted By</div>
 			<h2 class="section-title reveal reveal-delay-1">Clients &amp; <em>Brands</em></h2>
 			<div class="logos-grid reveal reveal-delay-2">
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/absa_white.webp' ) ); ?>" alt="ABSA" class="brand-logo" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/toyota_white.webp' ) ); ?>" alt="Toyota" class="brand-logo" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/mtn_white.webp' ) ); ?>" alt="MTN" class="brand-logo" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/anglo_american_white.webp' ) ); ?>" alt="Anglo American" class="brand-logo" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/discovery_white.webp' ) ); ?>" alt="Discovery" class="brand-logo" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/barclays_white.webp' ) ); ?>" alt="Barclays" class="brand-logo" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/FNB.png' ) ); ?>" alt="First National Bank" class="brand-logo" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/KFC.png' ) ); ?>" alt="KFC" class="brand-logo" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/land-rover.png' ) ); ?>" alt="Land Rover" class="brand-logo" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/Sanlam.png' ) ); ?>" alt="Sanlam" class="brand-logo" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/Vodacom.png' ) ); ?>" alt="Vodacom" class="brand-logo" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/sasol_white.webp' ) ); ?>" alt="Sasol" class="brand-logo" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/bat_white.webp' ) ); ?>" alt="British American Tobacco" class="brand-logo" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/centriq_insurance_white.webp' ) ); ?>" alt="Centriq Insurance" class="brand-logo" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/dainfern_college_white.webp' ) ); ?>" alt="Dainfern College" class="brand-logo" /></div>
-				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/mni_white.webp' ) ); ?>" alt="MNI" class="brand-logo" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/absa_white.webp' ) ); ?>" alt="ABSA" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/toyota_white.webp' ) ); ?>" alt="Toyota" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/mtn_white.webp' ) ); ?>" alt="MTN" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/anglo_american_white.webp' ) ); ?>" alt="Anglo American" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/discovery_white.webp' ) ); ?>" alt="Discovery" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/barclays_white.webp' ) ); ?>" alt="Barclays" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/FNB.webp' ) ); ?>" alt="First National Bank" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/KFC.webp' ) ); ?>" alt="KFC" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/land-rover.webp' ) ); ?>" alt="Land Rover" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/Sanlam.webp' ) ); ?>" alt="Sanlam" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/Vodacom.webp' ) ); ?>" alt="Vodacom" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/sasol_white.webp' ) ); ?>" alt="Sasol" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/bat_white.webp' ) ); ?>" alt="British American Tobacco" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/centriq_insurance_white.webp' ) ); ?>" alt="Centriq Insurance" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/dainfern_college_white.webp' ) ); ?>" alt="Dainfern College" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
+				<div class="logo-item"><img src="<?php echo esc_url( thebandit_asset( 'logos/mni_white.webp' ) ); ?>" alt="MNI" class="brand-logo" loading="lazy" decoding="async" height="45" /></div>
 			</div>
 		</div>
 	</section>
@@ -226,7 +226,7 @@ get_header();
 				<!-- Thumbnail (hidden after play clicked) -->
 				<div class="video-thumb" id="videoThumb" onclick="playVideo()" role="button" aria-label="Play showreel">
 					<div class="video-thumb-inner">
-						<img src="<?php echo esc_url( thebandit_asset( 'images/yt-thumbnail.png' ) ); ?>" alt="" class="video-thumb-bg-img" />
+						<img src="<?php echo esc_url( thebandit_asset( 'images/yt-thumbnail.webp' ) ); ?>" alt="" class="video-thumb-bg-img" width="1280" height="714" loading="lazy" decoding="async" />
 					</div>
 					<div class="video-play-btn">
 						<div class="play-circle">
@@ -405,7 +405,7 @@ get_header();
 
 					<!-- Image column -->
 					<div class="contact-image-col">
-						<img src="<?php echo esc_url( thebandit_asset( 'images/contact-hands-up.png' ) ); ?>" alt="The Bandit performing an illusion" />
+						<img src="<?php echo esc_url( thebandit_asset( 'images/contact-hands-up.webp' ) ); ?>" alt="The Bandit performing an illusion" width="900" height="1353" loading="lazy" decoding="async" />
 					</div>
 
 					<!-- Form column -->
