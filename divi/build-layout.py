@@ -142,7 +142,7 @@ hero_heading = column(
     + text("His Magic Is Criminal", {"text_text_color": GREY,
            "text_font": "Cinzel||||||||", "text_letter_spacing": "3px"}),
     "1_3")
-hero_img = column(image(IMG + "hero-cards.jpg", "The Bandit"), "1_3")
+hero_img = column(image(IMG + "hero-cards.webp", "The Bandit"), "1_3")
 hero_body = column(
     text("South Africa's #1 magician. A master of close-up magic, pickpocket "
          "entertainment and hypnosis, from intimate table magic to commanding "
@@ -188,7 +188,7 @@ sections.append(section(
     bg=DARK2, padding="70px|40px|70px|40px"))
 
 # ABOUT
-about_left = column(image(IMG + "about-illusion.jpg", "The Bandit performing"), "1_2")
+about_left = column(image(IMG + "about-illusion.webp", "The Bandit performing"), "1_2")
 about_right = column(
     heading("The Story", "<h2>Born to <span style=\"color:#05a0eb;\">Steal</span> the Show</h2>")
     + text("Raised in the heart of Johannesburg, The Bandit is a world-class "
@@ -244,8 +244,8 @@ logos = [
     ("absa_white.webp", "ABSA"), ("toyota_white.webp", "Toyota"),
     ("mtn_white.webp", "MTN"), ("anglo_american_white.webp", "Anglo American"),
     ("discovery_white.webp", "Discovery"), ("barclays_white.webp", "Barclays"),
-    ("FNB.png", "FNB"), ("KFC.png", "KFC"), ("land-rover.png", "Land Rover"),
-    ("Sanlam.png", "Sanlam"), ("Vodacom.png", "Vodacom"),
+    ("FNB.webp", "FNB"), ("KFC.webp", "KFC"), ("land-rover.webp", "Land Rover"),
+    ("Sanlam.webp", "Sanlam"), ("Vodacom.webp", "Vodacom"),
     ("sasol_white.webp", "Sasol"), ("bat_white.webp", "BAT"),
     ("centriq_insurance_white.webp", "Centriq"),
     ("dainfern_college_white.webp", "Dainfern"), ("mni_white.webp", "MNI"),
@@ -266,7 +266,7 @@ sections.append(section(
 sections.append(section(
     row(column(
         heading("See It Live", "<h2>Watch The <span style=\"color:#05a0eb;\">Magic</span> Unfold</h2>", center=True)
-        + video("https://www.youtube.com/watch?v=KXtSX7TxY1w", IMG + "yt-thumbnail.png")
+        + video("https://www.youtube.com/watch?v=KXtSX7TxY1w", IMG + "yt-thumbnail.webp")
         + button("Book Your Event", "#contact"))),
     bg=DARK, extra={"module_id": "video"}))
 
@@ -347,7 +347,14 @@ tiktok_html = (
     "<section><a target=\"_blank\" href=\"https://www.tiktok.com/@kevinkeuvelaar\">"
     "@kevinkeuvelaar</a></section>"
     "</blockquote>"
-    "<script async src=\"https://www.tiktok.com/embed.js\"></script>"
+    "<script>"
+    "(function(){var t=document.getElementById('tiktok');if(!t)return;var l=false;"
+    "function go(){if(l)return;l=true;var s=document.createElement('script');"
+    "s.async=true;s.src='https://www.tiktok.com/embed.js';document.body.appendChild(s);}"
+    "if('IntersectionObserver' in window){var o=new IntersectionObserver(function(e){"
+    "e.forEach(function(x){if(x.isIntersecting){go();o.disconnect();}});},{rootMargin:'400px'});"
+    "o.observe(t);}else{go();}})();"
+    "</script>"
     "</div>"
 )
 sections.append(section(
@@ -383,7 +390,7 @@ phone_cta = (
     "+27 87 943 9435</a>"
     "</div>"
 )
-contact_cells = (column(image(IMG + "contact-hands-up.png", "The Bandit"), "1_2")
+contact_cells = (column(image(IMG + "contact-hands-up.webp", "The Bandit"), "1_2")
                  + column(contact_form + code(phone_cta), "1_2"))
 sections.append(section(
     heading("Get In Touch", "<h2>Book The <span style=\"color:#05a0eb;\">Bandit</span></h2>", center=True)
